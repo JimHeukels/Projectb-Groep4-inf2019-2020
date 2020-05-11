@@ -11,6 +11,7 @@ namespace JimFilmsTake2
             // maken een bioscoop met 1 scherm
             // maak de repository aan, de koppeling tussen onze code en de database
             var repo = new BioscoopRepository();
+            /*
             Console.WriteLine("Wilt u een bioscoop toevoegen? Voor de naam en de locatie in");
             var nieuweBiosNaam = Console.ReadLine();
             var bioscoop = new Bioscoop(nieuweBiosNaam, "Azaleastraat 15");
@@ -45,8 +46,8 @@ namespace JimFilmsTake2
             {
                 repo.VerwijderBioscoop();
             }
-
-
+            */
+            repo.BioscoopKiezen();
             //repo.ToonBioscopen();
         }
     }
