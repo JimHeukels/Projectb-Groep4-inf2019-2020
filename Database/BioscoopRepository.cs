@@ -78,18 +78,7 @@ namespace JimFilmsTake2.Db
                 BiosIndex++;
             }
         }
-        /*
-        public void ToonStoel()
-        {
-            Console.WriteLine("dit zijn de stoelen waaruit je kan kiezen.");
-            int StoelIndex = 1;
-            foreach (var _stoel in _database.Zitplaatsen)
-            {
-                Console.WriteLine($"{_stoel.Rij} {_stoel.Nummer}");
-                StoelIndex++;
-            }
-        }
-        */
+        
         public void ToonFilms()
         {
             int FilmIndex = 1;
@@ -160,21 +149,23 @@ namespace JimFilmsTake2.Db
                 var BioscoopBezoekNaam = this._database.Bioscopen[BioscoopBezoekAns - 1];
                 Console.WriteLine($"U heeft gekozen voor {BioscoopBezoekNaam.Naam}.");
                 string GekozenBioscoop = BioscoopBezoekNaam.Naam;
-                FilmKiezen(GekozenBioscoop);
+                FilmKiezen(GekozenBioscoop, BioscoopBezoekAns, BioscoopBezoekNaam.BeschikbareFilms);
             }
 
         }
-        public void FilmKiezen(string bioscoop)
+        public void FilmKiezen(string bioscoop, int BiosIndex, IList<Film> test)
         {
             Console.Clear();
             //hier komt films.json
             Console.WriteLine(bioscoop);
             Console.WriteLine("\nFilms die nu te zien zijn:\n");
+
             int FilmIndex = 1;
-            foreach (var _film in _database.Films)
+            foreach (var _film in test)
             {
                 Console.WriteLine($"({FilmIndex}) {_film.Titel}");
                 FilmIndex++;
+                
             }
 
             var GekozenFilm = Convert.ToInt32(Console.ReadLine());
@@ -193,7 +184,7 @@ namespace JimFilmsTake2.Db
 
             if (GekozenFilm >= 0 && GekozenFilm < FilmIndex)
             {
-                var FilmBezoekNaam = this._database.Films[GekozenFilm - 1];
+                var FilmBezoekNaam = this._database.Bioscopen[BiosIndex - 1].BeschikbareFilms[GekozenFilm - 1];
                 Console.Clear();
                 Console.WriteLine(bioscoop);
                 Console.WriteLine($"Titel: {FilmBezoekNaam.Titel}.");
@@ -201,6 +192,7 @@ namespace JimFilmsTake2.Db
                 Console.WriteLine($"Beschrijving: {FilmBezoekNaam.Beschrijving}");
                 Console.WriteLine($"Datum: {FilmBezoekNaam.Datum}");
                 Console.WriteLine($"Tijd: {FilmBezoekNaam.Tijd}");
+
                 string TweedeGekozenFilm = FilmBezoekNaam.Titel;
                 Console.WriteLine("\nKlopt het dat u " + TweedeGekozenFilm + " wilt zien?");
                 Console.WriteLine("\nType 1 als dit klopt of type 2 als dit niet klopt");
@@ -214,21 +206,36 @@ namespace JimFilmsTake2.Db
 
                 if (FilmCheck == 1)
                 {
-                    StoelenKiezen(TweedeGekozenFilm, bioscoop);
+                    StoelenKiezen(TweedeGekozenFilm, bioscoop, GekozenFilm, BiosIndex - 1);
                 }
 
                 else if (FilmCheck == 2)
                 {
-                    FilmKiezen(bioscoop);
+                    FilmKiezen(bioscoop, BiosIndex, test);
                 }
             }
         }
 
-        public void StoelenKiezen(string Film, string Bioscoop)
+        public void StoelenKiezen(string Film, string Bioscoop, int FilmIndex, int BiosIndex)
         {
             Console.Clear();
+            var StoelKiezen = this._database.Bioscopen[BiosIndex].Schermen[0].Vertoningen[Film].Zitplaatsen;
+
+
             Console.WriteLine(Bioscoop);
             Console.WriteLine("Film: " + Film);
+            Console.WriteLine("Beschrikbare zitplaatsen.");
+            int StoelIndex = 1;
+            foreach (var _stoel in _database.Bioscopen)
+            {
+                var test = _stoel.Schermen[0].Vertoningen[Film].Zitplaatsen[StoelIndex];
+                Console.WriteLine(test);
+                StoelIndex++;
+            }
+
+
+
+            /*
             List<string> stoel = new List<string>
                     {
                         "Reguliere zitplaats",
@@ -256,8 +263,9 @@ namespace JimFilmsTake2.Db
                 string GekozenStoelString = stoel[GekozenStoel];
                 Kosten(Film, Bioscoop, GekozenStoelString, GekozenStoel);
             }
+            */
         }
-
+        /*
         public void Kosten(string Film, string Bioscoop, string Stoel, int StoelIndex)
         {
             Console.Clear();
@@ -292,8 +300,9 @@ namespace JimFilmsTake2.Db
                 Console.WriteLine("\nDit kost " + (prijs[StoelIndex] * Aantal) + " euro");
                 //PlaatsenKiezen(Aantal);
             }
+            
         }
-
+        */
         /*
         public void PlaatsenKiezen(int aantal)
         {

@@ -19,11 +19,82 @@
       "Beschrijving": "De hobbits Frodo en Sam trekken verder richting Mordor om hun taak, het vernietigen van de machtige Ene Ring waar de slechte Sauron naar op zoek is, te volbrengen. Hierbij krijgen ze hulp uit onverwachte hoek. Ondertussen proberen Merry en Pippin te ontsnappen uit de handen van een Uruk-Hai leger en helpen Legolas, Aragorn en Gimli koning Theoden van Rohan in zijn strijd tegen de legers van Saruman.",
       "Schermtype": null,
       "Rating": 0
+    },
+    {
+      "Titel": "Lord of the Rings: Return of the King",
+      "Tijd": "20.00",
+      "Datum": "12-06-2021",
+      "Genre": "Avontuur",
+      "SpeelDuur": 201,
+      "Beschrijving": "De hobbits Sam en Frodo beginnen samen met Gollum aan het laatste deel van hun reis richting Mordor, om daar te proberen in het hol van de leeuw de machtige Ene Ring te vernietigen. De legers van Gondor proberen ondertussen de stad Minas Tirith te beschermen tegen Sauron's legers.",
+      "Schermtype": null,
+      "Rating": 0
+    },
+    {
+      "Titel": "No Time To Die",
+      "Tijd": "20.00",
+      "Datum": "12-06-2021",
+      "Genre": "Actie",
+      "SpeelDuur": 163,
+      "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
+      "Schermtype": null,
+      "Rating": 0
+    },
+    {
+      "Titel": "Black Widow",
+      "Tijd": "22.00",
+      "Datum": "22-04-2020",
+      "Genre": "Avontuur",
+      "SpeelDuur": 154,
+      "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
+      "Schermtype": null,
+      "Rating": 0
+    },
+    {
+      "Titel": "World War Z",
+      "Tijd": "22.00",
+      "Datum": "22-04-2020",
+      "Genre": "Avontuur",
+      "SpeelDuur": 116,
+      "Beschrijving": "Gerry Lane (Brad Pitt) is een toegewijde vader en echtgenoot die werkt voor het leger en de overheid. Wanneer een zombie-apocalyps uitbreekt, wordt Gerry door de regering gevraagd om de invasie tegen te gaan. Tegelijkertijd moet hij zijn vrouw en kinderen beschermen tegen de verbazingwekkend snelle, vleesetende zombies.",
+      "Schermtype": null,
+      "Rating": 0
     }
+
   ],
   "Bioscopen": [
     {
       "BeschikbareFilms": [
+        {
+          "Titel": "Lord of the Rings: The Fellowship of the Ring",
+          "Tijd": "22.00",
+          "Datum": "22-04-2020",
+          "Genre": "Avontuur",
+          "SpeelDuur": 178,
+          "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
+          "Schermtype": null,
+          "Rating": 0
+        },
+        {
+          "Titel": "Lord of the Rings: The Two Towers",
+          "Tijd": "20.00",
+          "Datum": "12-06-2021",
+          "Genre": "Avontuur",
+          "SpeelDuur": 179,
+          "Beschrijving": "De hobbits Frodo en Sam trekken verder richting Mordor om hun taak, het vernietigen van de machtige Ene Ring waar de slechte Sauron naar op zoek is, te volbrengen. Hierbij krijgen ze hulp uit onverwachte hoek. Ondertussen proberen Merry en Pippin te ontsnappen uit de handen van een Uruk-Hai leger en helpen Legolas, Aragorn en Gimli koning Theoden van Rohan in zijn strijd tegen de legers van Saruman.",
+          "Schermtype": null,
+          "Rating": 0
+        },
+        {
+          "Titel": "Lord of the Rings: Return of the King",
+          "Tijd": "20.00",
+          "Datum": "12-06-2021",
+          "Genre": "Avontuur",
+          "SpeelDuur": 201,
+          "Beschrijving": "De hobbits Sam en Frodo beginnen samen met Gollum aan het laatste deel van hun reis richting Mordor, om daar te proberen in het hol van de leeuw de machtige Ene Ring te vernietigen. De legers van Gondor proberen ondertussen de stad Minas Tirith te beschermen tegen Sauron's legers.",
+          "Schermtype": null,
+          "Rating": 0
+        }
       ],
       "Schermen": [
         {
@@ -105,7 +176,7 @@
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
             }
-          },
+        },
           "Nummer": 1
         },
         {
@@ -116,11 +187,41 @@
       ],
       "Werknemers": [
       ],
-      "Naam": "Pathe Schouwburgplein",
+      "Naam": "Nioscoop Schouwburgplein",
       "Locatie": "Azaleastraat 15"
     },
     {
       "BeschikbareFilms": [
+        {
+          "Titel": "No Time To Die",
+          "Tijd": "20.00",
+          "Datum": "12-06-2021",
+          "Genre": "Actie",
+          "SpeelDuur": 163,
+          "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
+          "Schermtype": null,
+          "Rating": 0
+        },
+        {
+          "Titel": "Black Widow",
+          "Tijd": "22.00",
+          "Datum": "22-04-2020",
+          "Genre": "Avontuur",
+          "SpeelDuur": 154,
+          "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
+          "Schermtype": null,
+          "Rating": 0
+        },
+        {
+          "Titel": "World War Z",
+          "Tijd": "22.00",
+          "Datum": "22-04-2020",
+          "Genre": "Avontuur",
+          "SpeelDuur": 116,
+          "Beschrijving": "Gerry Lane (Brad Pitt) is een toegewijde vader en echtgenoot die werkt voor het leger en de overheid. Wanneer een zombie-apocalyps uitbreekt, wordt Gerry door de regering gevraagd om de invasie tegen te gaan. Tegelijkertijd moet hij zijn vrouw en kinderen beschermen tegen de verbazingwekkend snelle, vleesetende zombies.",
+          "Schermtype": null,
+          "Rating": 0
+        }
       ],
       "Schermen": [
         {
@@ -213,308 +314,7 @@
       ],
       "Werknemers": [
       ],
-      "Naam": "Pathe Arena",
-      "Locatie": "Azaleastraat 15"
-    },
-    {
-      "BeschikbareFilms": [
-      ],
-      "Schermen": [
-        {
-          "Vertoningen": {
-            "1-5-2020 16:04:14": {
-              "Prijs": 0,
-              "Film": null,
-              "Zitplaatsen": [
-                {
-                  "Rij": 0,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                }
-              ],
-              "AanvangsTijd": "2020-05-01T16:04:14.0975869+02:00"
-            }
-          },
-          "Nummer": 1
-        },
-        {
-          "Vertoningen": {
-          },
-          "Nummer": 2
-        }
-      ],
-      "Werknemers": [
-      ],
-      "Naam": "Pathe",
-      "Locatie": "Azaleastraat 15"
-    },
-    {
-      "BeschikbareFilms": [
-      ],
-      "Schermen": [
-        {
-          "Vertoningen": {
-            "1-5-2020 16:10:24": {
-              "Prijs": 0,
-              "Film": null,
-              "Zitplaatsen": [
-                {
-                  "Rij": 0,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                }
-              ],
-              "AanvangsTijd": "2020-05-01T16:10:24.6308513+02:00"
-            }
-          },
-          "Nummer": 1
-        },
-        {
-          "Vertoningen": {
-          },
-          "Nummer": 2
-        }
-      ],
-      "Werknemers": [
-      ],
-      "Naam": "Pathe",
-      "Locatie": "Azaleastraat 15"
-    },
-    {
-      "BeschikbareFilms": [
-      ],
-      "Schermen": [
-        {
-          "Vertoningen": {
-            "1-5-2020 16:12:51": {
-              "Prijs": 0,
-              "Film": null,
-              "Zitplaatsen": [
-                {
-                  "Rij": 0,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 0,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 0,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 1,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 2,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 3,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                },
-                {
-                  "Rij": 1,
-                  "Nummer": 4,
-                  "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
-                }
-              ],
-              "AanvangsTijd": "2020-05-01T16:12:51.3639494+02:00"
-            }
-          },
-          "Nummer": 1
-        },
-        {
-          "Vertoningen": {
-          },
-          "Nummer": 2
-        }
-      ],
-      "Werknemers": [
-      ],
-      "Naam": "Pathe",
-      "Locatie": "Azaleastraat 15"
-    },
-    {
-      "BeschikbareFilms": [
-      ],
-      "Schermen": [
-      ],
-      "Werknemers": [
-      ],
-      "Naam": "Sams bioscoop",
+      "Naam": "Nioscoop de Kuip",
       "Locatie": "Azaleastraat 15"
     }
   ]
