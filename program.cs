@@ -79,7 +79,7 @@ namespace JimFilmsTake2
 
             Console.Clear();
             Console.WriteLine("hier komt de big shizzle");
-            repo.vertoningenTonen();
+            repo.filmNaarBeschikbaar();
         }
     }
 }

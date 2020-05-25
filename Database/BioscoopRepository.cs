@@ -4,6 +4,8 @@ using System.IO;
 using System.Text;
 using JimFilmsTake2.Model;
 using Newtonsoft.Json;
+using ProjectB.Utils;
+
 namespace JimFilmsTake2.Db
 {
     public class BioscoopRepository
@@ -11,6 +13,7 @@ namespace JimFilmsTake2.Db
 
         private JsonModel _database { get; set; }
         public static readonly string FILEPATH = @"..\..\..\Database\db.json";
+        
         
 
         public BioscoopRepository()
@@ -31,6 +34,9 @@ namespace JimFilmsTake2.Db
         {
             File.WriteAllText(FILEPATH, JsonConvert.SerializeObject(this._database));
         }
+
+        
+
         public void AddBioscoop(Bioscoop bioscoop)
         {
             // Checken of de bioscoop niet al bestaat, dit doet de contains functie voor ons.
@@ -332,8 +338,91 @@ namespace JimFilmsTake2.Db
                     //voeg toe aan beschikbare films
         public void filmNaarBeschikbaar()
         {
+            
+            Console.WriteLine("Welkom bij het filmaanbod aanpas register schema! \n Aan welke Bioscoop wilt u de film toevoegen?");
+            ToonBioscopen();
+            int biosKeuze = Convert.ToInt32(Console.ReadLine());
+            biosKeuze -= 1;
+
+            Console.WriteLine($"Dit zijn de huidige beschikbare films bij {_database.Bioscopen[biosKeuze].Naam}");
+
+            int filmIndex = 1;
+            /*
+            foreach (var _film in _database.Bioscopen[biosKeuze].BeschikbareFilms)
+            {
+                Console.WriteLine($"({filmIndex}) {_film.Titel}");
+            }
+            */
+
+            _database.Bioscopen[biosKeuze].BeschikbareFilms.PrintAllWithIndex(x => x.Titel);
+
+
+            Console.WriteLine("dit zijn alle biosjes in het systeem");
+            _database.Bioscopen.PrintAllWithIndex(x => x.Naam);
+
+            Console.WriteLine("Deze films bevinden zich in de database en nog niet in het aanbod van deze bioscoop:");
+            var witlijst = new List<int>();
+            for(int i = 0; i < _database.Films.Count; i ++)
+            {
+                var _film = _database.Films[i];
+
+                var filmBestaat = false;
+
+                foreach (var _bioscoopFilm in _database.Bioscopen[biosKeuze].BeschikbareFilms)
+                {
+                    if (_bioscoopFilm.Titel == _film.Titel)
+                    {
+                        filmBestaat = true;
+                        break;
+                    }
+                }
+                if (!filmBestaat)
+                {
+                    Console.WriteLine($"({i}) {_film.Titel}");
+                    witlijst.Add(i);
+                }
+                //voeg toe aan bios
+                //uit whitelist haalt
+            }
+            var heeftGeantwoord = false;
+            while (!heeftGeantwoord)
+            {
+                Console.WriteLine("Welke film wilt u toevoegen aan het bioscoop aanbod?");
+                int filmKeuze = Convert.ToInt32(Console.ReadLine());
+                if (witlijst.Contains(filmKeuze))
+                {
+                    _database.Bioscopen[biosKeuze].BeschikbareFilms.Add(_database.Films[filmKeuze]);
+                    //UpdateData();
+                    //updateData staat nu uitgecomment, zodat niet alle films gelijk worden weggeschreven naar het Json bestand
+                    //dit is momenteel makkelijker voor testen aangezien ik nog geen functie heb die films verwijderd uit beschikbareFilms :)
+                    heeftGeantwoord = true;
+                }
+                else
+                {
+                    Console.WriteLine("fout antwoord pannekoek, terug naar start!");
+                }
+            }
+
+
+            Console.WriteLine("Wilt u nog een film toevoegen? Y/N");
+            string antwoord = Console.ReadLine();
+            if(antwoord.ToUpper() == "Y")
+            {
+                filmNaarBeschikbaar();
+            }
+            else
+            {
+                //verwijs terug naar een ander menu
+            }
 
         }
+
+        //filmUitBeschikbaar
+            //kies bios
+            //loop door beschikbareFilms
+            //laat gebruiker een beschikbarefilm kiezen
+                //verwijdert beschikbare film
+
 
 
         //beschikbareFilmsNaarVertoning
