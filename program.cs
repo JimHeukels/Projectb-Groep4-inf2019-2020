@@ -33,7 +33,7 @@ namespace JimFilmsTake2
             repo.UpdateData();
 
             //var repo = new BioscoopRepository();
-            var bioscopen = repo.GetBioscopen();
+
 
             repo.ToonBioscopen();
 
@@ -47,8 +47,39 @@ namespace JimFilmsTake2
                 repo.VerwijderBioscoop();
             }
             */
-            repo.BioscoopKiezen();
+
+
+            //repo.BioscoopKiezen();
+
+
+
+            var datumTest = DateTime.Now.AddHours(2);
+            var TestDatum = DateTime.Now.AddHours(6);
+
+
+
+            Console.WriteLine(TestDatum.ToString("yyyy MM dd"));
+            
+            var bioscopen = repo.GetBioscopen();
+            var vertoning = bioscopen[0].Schermen[0].Vertoningen["22-4-2020 15:43:01"];
+
+            foreach (var _vertoning in bioscopen[0].Schermen[0].Vertoningen)
+            {
+                var value = _vertoning.Value;
+                Console.WriteLine(value.AanvangsTijd);
+            }
+            
+            if(vertoning.AanvangsTijd < DateTime.Now.AddDays(14))
+            {
+                Console.WriteLine("vertoning is premium A.F.");
+            }
+
+            Console.WriteLine("[O][O][X][X][O][X][X]\n[X][X][O][X][O][O][O]\n[X][O][O][X][O][O][O]\n");
             //repo.ToonBioscopen();
+
+            Console.Clear();
+            Console.WriteLine("hier komt de big shizzle");
+            repo.vertoningenTonen();
         }
     }
 }

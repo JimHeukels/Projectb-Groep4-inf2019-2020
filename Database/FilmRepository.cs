@@ -10,7 +10,7 @@ namespace JimFilmsTake2.Db
     {
 
         private JsonModel _database { get; set; }
-        public static readonly string FILEPATH = @"C:\Project_B\GitKraken\Projectb-Groep4-inf2019-2020\Database\FilmRepository.cs";
+        public static readonly string FILEPATH = @"..\..\..\Database\db.json";
 
         public FilmRepository()
         {
@@ -67,7 +67,7 @@ namespace JimFilmsTake2.Db
             string beslissing = Console.ReadLine();
 
 
-            if (beslissing == "Ja" || beslissing == "ja")
+            if (beslissing.ToUpper() == "JA")
 
             {
 

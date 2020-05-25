@@ -10,7 +10,8 @@ namespace JimFilmsTake2.Db
     {
 
         private JsonModel _database { get; set; }
-        public static readonly string FILEPATH = @"C:\School\2019-2020\Project B\V2\Projectb-Groep4-inf2019-2020\Database\db.json";
+        public static readonly string FILEPATH = @"..\..\..\Database\db.json";
+        
 
         public BioscoopRepository()
         {
@@ -78,18 +79,7 @@ namespace JimFilmsTake2.Db
                 BiosIndex++;
             }
         }
-        /*
-        public void ToonStoel()
-        {
-            Console.WriteLine("dit zijn de stoelen waaruit je kan kiezen.");
-            int StoelIndex = 1;
-            foreach (var _stoel in _database.Zitplaatsen)
-            {
-                Console.WriteLine($"{_stoel.Rij} {_stoel.Nummer}");
-                StoelIndex++;
-            }
-        }
-        */
+
         public void ToonFilms()
         {
             int FilmIndex = 1;
@@ -300,6 +290,84 @@ namespace JimFilmsTake2.Db
 
         }
         */
+
+        //jim functies
+
+        //filmNaarBeschikbareFilms
+            //Loop door totale film array heen
+            //welke film wilt u toevoegen?
+                //kies film
+                //aan welke bioscoop wilt u deze film toevoegen?
+                    //voeg toe aan beschikbare films
+        public void filmNaarBeschikbaar()
+        {
+
+        }
+
+
+        //beschikbareFilmsNaarVertoning
+            //laat gebruiker een bios kiezen
+                //loop door totale beschikbare films heen
+                //laat gebruiker film kiezen
+                    //laat gebruiker de rest van de data invoeren
+                        //voeg film toe als vertoning bij bios
+        
+
+
+        public void vertoningenTonen()
+        {
+            Console.WriteLine("Welkom bij Nioscoop, dit zijn alle voorstellingen van al onze bioscopen");
+
+            var _bioscopen = _database.Bioscopen;
+
+            foreach (var _bioscoop in _bioscopen)
+            {
+                Console.WriteLine($"--* {_bioscoop.Naam} *--");
+                foreach(var _schermen in _bioscoop.Schermen)
+                {
+                    foreach(var _vertoningen in _schermen.Vertoningen)
+                    {
+                        Console.WriteLine($"{_vertoningen.Key}");
+                        Console.WriteLine("\n\n");
+                    }
+                }
+            }
+        }
+
+
+        
+        
+        public void toonVertoningen()
+            //Volgens mij is deze functie werkend, alleen heb ik het alleen nog maar getest met weinig schermen / vertoningen
+            //Zal dit nader testen als ik andere functies werkend heb waarmee ik die toe kan voegen aan de database.
+                // ook kan ik nog geen film gegevens ophalen per vertoning omdat films nog niet gekoppeld zijn aan vertoningen :)
+        {
+            Console.WriteLine("Van welke bioscoop wilt u de huidige voorstellingen zien?");
+            ToonBioscopen();
+
+            Console.WriteLine("\n Voer het nummer van de Bioscoop in waarvan u de voorstellingen wilt zien.");
+            int antwoord = Convert.ToInt32(Console.ReadLine());
+
+            var bioscopen = _database.Bioscopen;
+            var gekozenBios = bioscopen[antwoord];
+
+            int schermIndex = 0;
+            int vertoningIndex = 0;
+            foreach (var _schermen in gekozenBios.Schermen)
+            {
+                schermIndex += 1;
+                Console.WriteLine($"Schermindex is nu {schermIndex}");
+
+
+                foreach (var _vertoningen in _schermen.Vertoningen )
+                {
+                    vertoningIndex += 1;
+                    Console.WriteLine($"Vertoningindex is nu {vertoningIndex}, voorstelling key is {_vertoningen.Key}");
+
+                }
+            }
+        }
+
 
         public IList<Bioscoop> GetBioscopen()
         {
