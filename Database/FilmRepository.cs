@@ -170,7 +170,48 @@ namespace JimFilmsTake2.Db
                 //Programs.StartMenu(totalfilms); 
             }
         }
-
+        public void AdminMenu()
+        {
+            Console.WriteLine("\nSelecteer uit de volgende opties\n");
+            Console.WriteLine("(1) Omzet tonen.\n(2) Tickets aanpassen.\n(3) Beschikbare films aanpassen.\n(4) Film toevoegen.\n(5) Film verwijderen.\n(6) Films tonen.");
+            Console.Write("\nOptie : ");
+            int AdminOptie = Int32.Parse(Console.ReadLine());
+            GekozenAdminOptie(AdminOptie);
+        }
+        public void GekozenAdminOptie(int AdminOptie)
+        {
+            if (AdminOptie == 1)
+            {
+                // verwijzing naar functie omzet tonen
+                // is nog niet aangemaakt
+            }
+            else if (AdminOptie == 2)
+            {
+                // verwijzing naar functie Tickets aanpassen
+                TicketAanpassen();
+                // is nog aangemaakt
+            }
+            else if (AdminOptie == 3)
+            {
+                // verwijzing naar functie FilmAanpassen
+                FilmAanpassen();
+            }
+            else if (AdminOptie == 4)
+            {
+                // verwijzing naar functie FilmToevoegen
+                FilmToevoegen();
+            }
+            else if (AdminOptie == 5)
+            {
+                // verwijzing naar functie FilmVerwijderen
+                FilmVerwijderen();
+            }
+            else if (AdminOptie == 6)
+            {
+                // verwijzing naar functie Films tonen
+                // Programs.TijdenAanpassen(totalfilms); 
+            }
+        }
         public void FilmsTonen() //Films tonen
         {
             int Index = 1;
@@ -179,6 +220,115 @@ namespace JimFilmsTake2.Db
                 Console.WriteLine($"({Index}) {i.Titel}, {i.Datum}, {i.Tijd}, {i.Genre}");
                 Index++;
             }
+        }
+        public void TicketsTonen() //Tickets tonen
+        {
+            int Index = 1;
+            foreach (Ticket i in this._database.Tickets)
+            {
+                Console.WriteLine($"({Index}) {i.TypeTicket} : {i.TicketPrijs}");
+                Index++;
+            }
+        }
+        public void TicketAanpassen() //Tickets aanpassen
+        {
+            Console.WriteLine("\nBeschikbare tickets\n");
+            int Index = 1;
+
+            foreach (Ticket i in this._database.Tickets)
+            {
+                Console.WriteLine($"({Index}) {i.TypeTicket} : {i.TicketPrijs}");
+                Index++;
+            }
+            Console.WriteLine("\nWelke ticket wilt u aanpassen?");
+            Console.Write("\nTyp het cijfer van de ticket in : ");
+            int ticketkiezen = Convert.ToInt32(Console.ReadLine());
+            var ticketkeuze = this._database.Tickets[ticketkiezen - 1];
+            Console.WriteLine($"Wilt u {ticketkeuze.TypeTicket} aanpassen?");
+            Console.Write("Typ 'Ja' of 'Nee' : ");
+            string beslissing = Console.ReadLine();
+            if (beslissing == "ja" || beslissing == "Ja")
+            {
+                Console.WriteLine($"\nWat wilt u aanpassen aan de {ticketkeuze.TypeTicket}?");
+                Console.WriteLine("Wilt u (1) de ticket naam aanpassen of (2) de ticketprijs aanpassen?");
+                Console.Write("\nTyp het cijfer van uw keuze in : ");
+                int ticketaanpassing = Convert.ToInt32(Console.ReadLine());
+                if (ticketaanpassing == 1)
+                {
+                    Console.WriteLine($"\nU wilt de ticket naam ({ticketkeuze.TypeTicket}) aanpassen.");
+                    Console.Write($"Typ de nieuwe ticket naam in voor ({ticketkeuze.TypeTicket}) : ");
+                    string nieuweticketnaam = Console.ReadLine();
+                    Console.WriteLine($"Wilt u de ticket naam: {ticketkeuze.TypeTicket} veranderen in : {nieuweticketnaam}?");
+                    Console.Write("Typ 'Ja' of 'Nee' : ");
+                    string beslissing2 = Console.ReadLine();
+                    if (beslissing2 == "Ja" || beslissing2 == "ja")
+                    {
+                        Console.WriteLine($"\n{ticketkeuze.TypeTicket} is veranderd naar : {nieuweticketnaam}.\n");
+                        ticketkeuze.TypeTicket = nieuweticketnaam;
+                        UpdateData();
+                        TicketsTonen();
+                        AdminMenu();
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nWilt u een andere ticket aanpassen?");
+                        Console.Write("Typ 'Ja' of 'Nee' : ");
+                        string beslissing3 = Console.ReadLine();
+                        if (beslissing3 == "Ja" || beslissing3 == "ja")
+                        {
+                            TicketAanpassen();
+                        }
+                        else
+                        {
+                            Console.WriteLine("U wordt doorgestuurd naar het Administrator menu.");
+                            AdminMenu();
+                        }
+                    }
+                }
+                else if (ticketaanpassing == 2)
+                {
+                    Console.WriteLine($"\nU wilt de ticketprijs aanpassen van ({ticketkeuze.TypeTicket})\nhuidige ticketprijs voor deze ticket = ({ticketkeuze.TicketPrijs})");
+                    Console.Write($"Typ de nieuwe ticketprijs in voor ({ticketkeuze.TypeTicket}) : ");
+                    double nieuweticketprijs = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine($"Wilt u de huidige ticketprijs : ({ticketkeuze.TicketPrijs}) veranderen naar : ({nieuweticketprijs})?");
+                    Console.Write("Typ 'Ja' of 'Nee' : ");
+                    string beslissing4 = Console.ReadLine();
+                    if (beslissing4 == "Ja" || beslissing4 == "ja")
+                    {
+                        Console.WriteLine($"\nDe ticketprijs van ({ticketkeuze.TypeTicket}) is veranderd naar ({nieuweticketprijs})");
+                        ticketkeuze.TicketPrijs = nieuweticketprijs;
+                        UpdateData();
+                        TicketsTonen();
+                        AdminMenu();
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nWilt u een andere ticket aanpassen?");
+                        Console.Write("Typ 'Ja' of 'Nee' : ");
+                        string beslissing3 = Console.ReadLine();
+                        if (beslissing3 == "Ja" || beslissing3 == "ja")
+                        {
+                            TicketAanpassen();
+                        }
+                        else
+                        {
+                            Console.WriteLine("U wordt doorgestuurd naar het Administrator menu.");
+                            AdminMenu();
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("U wordt doorgestuurd naar het Administrator menu.");
+                    AdminMenu();
+                }
+            }
+            else
+            {
+                Console.WriteLine("U wordt doorgestuurd naar het Administrator menu.");
+                AdminMenu();
+            }
+
         }
 
         public void FilmAanpassen() //Films aanpassen 

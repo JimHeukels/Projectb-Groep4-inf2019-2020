@@ -109,4 +109,18 @@ namespace JimFilmsTake2.Model
             this.Locatie = locatie;
         }
     }
+    public class Ticket
+    {
+        public IList<Ticket> Tickets { get; set; }
+
+        public double TicketPrijs { get; set; }
+
+        public string TypeTicket { get; set; }
+
+        public Ticket(double TicketPrijs, string TypeTicket)
+        {
+            this.TicketPrijs = TicketPrijs;
+            this.TypeTicket = TypeTicket;
+        }
+    }
 }
