@@ -52,7 +52,7 @@ namespace JimFilmsTake2
             //repo.BioscoopKiezen();
 
 
-
+            /*
             var datumTest = DateTime.Now.AddHours(2);
             var TestDatum = DateTime.Now.AddHours(6);
 
@@ -80,6 +80,8 @@ namespace JimFilmsTake2
             Console.Clear();
             Console.WriteLine("hier komt de big shizzle");
             repo.vertoningenTonen();
+            */
+            repo.BioscoopKiezen();
         }
     }
 }
