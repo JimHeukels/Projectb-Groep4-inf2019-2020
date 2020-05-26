@@ -10,12 +10,15 @@ namespace JimFilmsTake2.Db
     {
 
         private JsonModel _database { get; set; }
-        public static readonly string FILEPATH = @"..\..\..\Database\db.json";
+
 
         public FilmRepository()
         {
-
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var FILEPATH = Path.Combine(projectFolder, @"Database/db.json");
             var jsonString = File.ReadAllText(FILEPATH);
+
+
             this._database = new JsonModel();
             if (jsonString == "")
             {
@@ -28,6 +31,9 @@ namespace JimFilmsTake2.Db
         }
         public void UpdateData()
         {
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var FILEPATH = Path.Combine(projectFolder, @"Database/db.json");
+            var jsonString = File.ReadAllText(FILEPATH);
             File.WriteAllText(FILEPATH, JsonConvert.SerializeObject(this._database));
         }
 
@@ -121,7 +127,7 @@ namespace JimFilmsTake2.Db
         {
             Console.WriteLine("\nSelecteer uit de volgende opties:\n");
 
-            Console.WriteLine("\n(1) beschikbare films aanpassen.\n(2) film toevoegen.\n(3) film verwijderen.\n(4 omzet tonen.(5) films tonen");
+            Console.WriteLine("\n(1) beschikbare films aanpassen.\n(2) film toevoegen.\n(3) film verwijderen.\n(4) omzet tonen.\n(5) films tonen");
             Console.Write("Optie : ");
 
             int OptieKiezen = Int32.Parse(Console.ReadLine());
@@ -155,7 +161,7 @@ namespace JimFilmsTake2.Db
             else if (OptieKiezen == 5)
             {
                 // verwijzing naar functie 5 
-                //Programs.gemaakteOmzet(totalfilms); 
+                FilmsTonen(); 
             }
             else
 
@@ -193,7 +199,7 @@ namespace JimFilmsTake2.Db
             if (antwoord2 == "ja" || antwoord2 == "Ja")
             {
                 Console.WriteLine($"Wat wilt u aanpassen aan {Filmaanpas.Titel}?");
-                Console.WriteLine($"Wilt u de (1)Titel, /n(2)Tijd, /n(3)Datum, /n(4)Genre of (5)alles aanpassen? typ de index");
+                Console.WriteLine($"Wilt u de (1)Titel,(2)Tijd,(3)Datum,(4)Genre of (5)alles aanpassen? typ de index");
                 int intantwoord = Convert.ToInt32(Console.ReadLine());
                 if (intantwoord == 1)
                 {

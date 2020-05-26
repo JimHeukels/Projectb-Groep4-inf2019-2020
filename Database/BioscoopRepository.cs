@@ -12,18 +12,22 @@ namespace JimFilmsTake2.Db
     {
 
         private JsonModel _database { get; set; }
-        public static readonly string FILEPATH = @"..\..\..\Database\db.json";
-        
-        
+
+
+
+
+
 
         public BioscoopRepository()
         {
 
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var FILEPATH = Path.Combine(projectFolder, @"Database/db.json");
             var jsonString = File.ReadAllText(FILEPATH);
             this._database = new JsonModel();
             if (jsonString == "")
             {
-                UpdateData();
+               UpdateData();
             }
             else
             {
@@ -32,6 +36,8 @@ namespace JimFilmsTake2.Db
         }
         public void UpdateData()
         {
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var FILEPATH = Path.Combine(projectFolder, @"db.json");
             File.WriteAllText(FILEPATH, JsonConvert.SerializeObject(this._database));
         }
 
