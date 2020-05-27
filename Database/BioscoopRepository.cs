@@ -338,16 +338,22 @@ namespace JimFilmsTake2.Db
 
                 Hoeveelheid--;
             }
-            Kosten(Film, Bioscoop);
-
-            /*
-            if (GekozenStoel >= 0 && GekozenStoel < 2)
+            if (Hoeveelheid == 0)
             {
-                string GekozenStoelString = stoel[GekozenStoel];
-                Kosten(Film, Bioscoop, GekozenStoelString, GekozenStoel);
+                Console.Clear();
+                Console.WriteLine(Bioscoop);
+                Console.WriteLine($"Gekozen stoelen:\n{GekozenStoelen}");
+                Console.WriteLine("Klopt dit?\nType 1 als het klopt of type 2 als het niet klopt.");
+                int DoorGeven = Convert.ToInt32(Console.ReadLine());
+                if (DoorGeven == 1)
+                {
+                    Kosten(Film, Bioscoop);
+                }
+                else
+                {
+                    StoelenKiezen(Film, Bioscoop, FilmIndex, BiosIndex, VoorTerugFunctie);
+                }
             }
-            */
-
 
         }
 

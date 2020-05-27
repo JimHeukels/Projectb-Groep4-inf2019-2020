@@ -128,28 +128,28 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": true
+                  "Beschikbaar": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": true
+                  "Beschikbaar": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": true
+                  "Beschikbaar": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": true
+                  "Beschikbaar": false
                 },
                 {
                   "Rij": 0,

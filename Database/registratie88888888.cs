@@ -357,7 +357,6 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                Console.Clear();
                 Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen\n [2] Registreren\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
 
             }
