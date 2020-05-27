@@ -189,7 +189,7 @@ namespace JimFilmsTake2.Db
             {
                 Console.WriteLine($"({FilmIndex}) {_film.Titel}");
                 FilmIndex++;
-                
+
             }
 
             var GekozenFilm = Convert.ToInt32(Console.ReadLine());
@@ -230,7 +230,7 @@ namespace JimFilmsTake2.Db
 
                 if (FilmCheck == 1)
                 {
-                    StoelenKiezen(TweedeGekozenFilm, bioscoop, GekozenFilm, BiosIndex - 1);
+                    StoelenKiezen(TweedeGekozenFilm, bioscoop, GekozenFilm, BiosIndex - 1, test);
                 }
 
                 else if (FilmCheck == 2)
@@ -240,108 +240,135 @@ namespace JimFilmsTake2.Db
             }
         }
 
-        public void StoelenKiezen(string Film, string Bioscoop, int FilmIndex, int BiosIndex)
+        public void StoelenKiezen(string Film, string Bioscoop, int FilmIndex, int BiosIndex, IList<Film> VoorTerugFunctie)
         {
             Console.Clear();
-            var StoelKiezen = this._database.Bioscopen[BiosIndex].Schermen[0].Vertoningen[Film].Zitplaatsen;
+            var StoelKiezen1 = this._database.Bioscopen[BiosIndex].Schermen[0].Vertoningen["24/05/2020 18:00"].Zitplaatsen;
 
 
             Console.WriteLine(Bioscoop);
             Console.WriteLine("Film: " + Film);
-            Console.WriteLine("Beschrikbare zitplaatsen.");
+            Console.WriteLine("Hoeveel zitplaatsen wilt u reserveren");
+            int Hoeveelheid = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Beschikbare zitplaatsen.");
             int StoelIndex = 1;
-            foreach (var _stoel in _database.Bioscopen)
+            string GekozenStoelen = "";
+            string test = "";
+            if (Hoeveelheid == 999)
             {
-                var test = _stoel.Schermen[0].Vertoningen[Film].Zitplaatsen[StoelIndex];
-                Console.WriteLine(test);
+                FilmKiezen(Bioscoop, BiosIndex, VoorTerugFunctie);
+            }
+            int test123 = StoelKiezen1.Count;
+            var probeersel = ((test123) / (StoelKiezen1[test123 - 1].Rij + 1));
+
+            while (StoelIndex <= StoelKiezen1.Count)
+            {
+                int CurrentSeat = StoelIndex;
+
+                if ((StoelIndex - 1) % probeersel == 0)
+                {
+                    test += ($"\nRij {StoelKiezen1[StoelIndex].Rij + 1}: ");
+                }
+
+                if (StoelKiezen1[StoelIndex - 1].Beschikbaar == true)
+                {
+                    test += $"(-X-), ";
+                }
+
+                else
+                {
+                    test += $"({CurrentSeat}:{StoelKiezen1[StoelIndex - 1].Nummer + 1}), ";
+                }
                 StoelIndex++;
+                if (StoelIndex == (StoelKiezen1.Count + 1))
+                {
+                    Console.WriteLine(test);
+                }
             }
 
+            while (Hoeveelheid > 0)
+            {
+                var test12 = Convert.ToInt32(Console.ReadLine());
+                while (StoelKiezen1[test12 - 1].Beschikbaar == true)
+                {
+                    Console.WriteLine("Deze stoel is bezet, probeer het nog een keer");
+                    test12 = Convert.ToInt32(Console.ReadLine());
+                }
 
+                if (StoelKiezen1[test12].Beschikbaar == false)
+                {
+                    Console.WriteLine($"{StoelKiezen1[test12].Rij + 1} {StoelKiezen1[test12].Nummer}");
+                    StoelKiezen1[test12 - 1].Beschikbaar = true;
+                    UpdateData();
+                }
+                Console.Clear();
+                Console.WriteLine(Bioscoop);
+                Console.WriteLine("Film: " + Film);
+                Console.WriteLine($"U kunt nog {Hoeveelheid - 1} zitplaatsen kiezen.");
+
+
+                StoelIndex = 1;
+                test = "";
+                while (StoelIndex <= StoelKiezen1.Count)
+                {
+                    int CurrentSeat = StoelIndex;
+
+                    if ((StoelIndex - 1) % probeersel == 0)
+                    {
+                        test += ($"\nRij {StoelKiezen1[StoelIndex].Rij + 1}: ");
+                    }
+                    if (StoelKiezen1[StoelIndex - 1].Beschikbaar == true)
+                    {
+                        test += $"(-X-), ";
+                    }
+                    else
+                    {
+                        test += $"({CurrentSeat}:{StoelKiezen1[StoelIndex - 1].Nummer + 1}), ";
+                    }
+                    StoelIndex++;
+                    if (StoelIndex == (StoelKiezen1.Count + 1))
+                    {
+                        Console.WriteLine(test);
+                    }
+                }
+                string text = $"({StoelKiezen1[test12 - 1].Rij + 1}:{StoelKiezen1[test12 - 1].Nummer + 1})\n";
+                GekozenStoelen += text;
+                Console.WriteLine($"Gekozen stoelen:\n{GekozenStoelen}");
+
+
+                Hoeveelheid--;
+            }
+            Kosten(Film, Bioscoop);
 
             /*
-            List<string> stoel = new List<string>
-                    {
-                        "Reguliere zitplaats",
-                        "Love-Seat"
-                    };
-
-            //hier kan je kiezen uit 1 van twee soorten zitplaatsen, voor een premium klant zullen er meer opties zijn
-            Console.WriteLine("\nSoorten zitplaats:\n\n(1) " + stoel[0] + "\n(2) " + stoel[1] + "\n\nType het nummer van de door u gekozen stoel.\n\nAls u terug wilt naar de vorige stap type dan 9.");
-            int GekozenStoel = Convert.ToInt32(Console.ReadLine()) - 1;
-
-            if (GekozenStoel == 99)
-            {
-                FilmKiezen(Bioscoop);
-            }
-
-            while (GekozenStoel > 2 | GekozenStoel < 0)
-            {
-                //zorgt ervoor dat er alleen maar uit de twee eerder genoemde zitplaatsen gekozen kan worden, kiest iemand iets anders moeten ze opnieuw een nummer invoeren
-                Console.WriteLine("U kunt alleen maar kiezen uit 1 of 2.");
-                GekozenStoel = Convert.ToInt32(Console.ReadLine()) - 1;
-            }
-
             if (GekozenStoel >= 0 && GekozenStoel < 2)
             {
                 string GekozenStoelString = stoel[GekozenStoel];
                 Kosten(Film, Bioscoop, GekozenStoelString, GekozenStoel);
             }
             */
+
+
         }
-        /*
-        public void Kosten(string Film, string Bioscoop, string Stoel, int StoelIndex)
+
+        public void Kosten(string Film, string Bioscoop)
         {
             Console.Clear();
             Console.WriteLine(Bioscoop);
+            Console.WriteLine("!!!Werkzaamheden!!!");
 
-            List<int> prijs = new List<int>
-            {
-                10,
-                17
-            };
 
-            Console.WriteLine("\nU heeft gekozen voor de " + Stoel);
-            Console.WriteLine("\n1 " + Stoel + " kost " + prijs[StoelIndex] + " Euro");
-            Console.WriteLine("\nAls u een andere soort stoel wilt kiezen kunt u 99 typen.");
-            Console.WriteLine("\nHoeveel zitplaatsen wilt u reserveren?\n");
-
-            int Aantal = Convert.ToInt32(Console.ReadLine());
-            if (Aantal == 99)
-            {
-                StoelenKiezen(Film, Bioscoop);
-            }
-
-            while (Aantal == 0 && Aantal > 50)
-            {
-                Console.WriteLine("Er zijn maar 50 zitplaatsen.");
-                Aantal = Convert.ToInt32(Console.ReadLine());
-            }
-
-            if (Aantal > 0 && Aantal <= 50)
-            {
-                Console.WriteLine("\nU heeft gekozen voor " + Aantal + " " + Stoel);
-                Console.WriteLine("\nDit kost " + (prijs[StoelIndex] * Aantal) + " euro");
-                //PlaatsenKiezen(Aantal);
-            }
-            
-        }
-        */
-        /*
-        public void PlaatsenKiezen(int aantal)
-        {
 
         }
-        */
 
         //jim functies
 
         //filmNaarBeschikbareFilms
-            //Loop door totale film array heen
-            //welke film wilt u toevoegen?
-                //kies film
-                //aan welke bioscoop wilt u deze film toevoegen?
-                    //voeg toe aan beschikbare films
+        //Loop door totale film array heen
+        //welke film wilt u toevoegen?
+        //kies film
+        //aan welke bioscoop wilt u deze film toevoegen?
+        //voeg toe aan beschikbare films
         public void filmNaarBeschikbaar()
         {
             
