@@ -160,7 +160,7 @@ namespace JimFilmsTake2
 
 
 
-					case "5":
+					case "6":
 					case "Afsluiten":
 						{
 
@@ -193,15 +193,7 @@ namespace JimFilmsTake2
 						}
 						goto start;
 
-					case "8":
-					case "Afsluitenn":
-						{
-							Console.Clear();
-							Classq.Afsluiten();
-						}
-						goto start;
-
-					case "420":
+					case "5":
 					case "AdminLogin":
 						{
 							Console.Clear();

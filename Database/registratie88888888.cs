@@ -132,9 +132,9 @@ namespace registratie88888888
 
 
                             string user = Convert.ToString(username[ID]);
-                            Console.WriteLine("\n Hoofd Menu \n Welkom terug " + user);
+                            Console.WriteLine("\nHoofdmenu \nWelkom terug " + user);
 
-                            Console.WriteLine("\n [1] Uitloggen\n [2] Wachtwoord veranderen\n [3] Afsluiten");
+                            Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
 
                             input = Console.ReadLine();
                             input.ToLower();
@@ -357,7 +357,7 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen\n [2] Registreren\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
+                Console.WriteLine("\nWelkom bij Nioscoop\n(1) Inloggen\n(2) Registreren\n(3) Een premium acccount aanmaken\n(4) Inloggen met uw premium account\n(5) Inloggen als Administrator\n(6) Afsluiten");
 
             }
 
@@ -445,9 +445,9 @@ namespace registratie88888888
                             {
 
                                 string userpremium = Convert.ToString(usernamepremium[ID]);
-                                Console.WriteLine("\n Hoofd Menu \n Welkom terug " + userpremium);
+                                Console.WriteLine("\nHoofdmenu \nWelkom terug " + userpremium);
 
-                                Console.WriteLine("\n [1] Uitloggen\n [2] Wachtwoord veranderen\n [3] Afsluiten");
+                                Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
                                 input = Console.ReadLine();
                                 input.ToLower();
                                 switch (input)
