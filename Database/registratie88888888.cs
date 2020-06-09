@@ -1,8 +1,15 @@
-﻿using System.Text.Json;
+﻿
+
+//gitignore test
+//gitignore test 2
+
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System;
 using System.Collections;
 using System.IO;
+using JimFilmsTake2.Db;
+using JimFilmsTake2.Model;
 
 
 namespace registratie88888888
@@ -48,7 +55,7 @@ namespace registratie88888888
             string input;
             int ID = 0;
             bool login = false;
-
+            var repo2 = new FilmRepository();
             var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             var fileUsername = Path.Combine(projectFolder, @"username.json");
             string[] usernameArray = File.ReadAllLines(fileUsername);
@@ -122,25 +129,26 @@ namespace registratie88888888
 
 
                             string user = Convert.ToString(username[ID]);
-                            Console.WriteLine("\nHoofdmenu \nWelkom terug " + user);
+                            Console.WriteLine("\n Hoofd Menu \n Welkom terug " + user);
 
-                            Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
+                            Console.WriteLine("\n [1] Naar uw opties gaan\n [2] Wachtwoord veranderen\n [3] Afsluiten \n [4] Admin menu \n [5] Uitloggen");
 
                             input = Console.ReadLine();
                             input.ToLower();
                             switch (input)
                             {
                                 case "1":
-                                case "uitloggen":
-                                case "log uit":
-                                    Console.WriteLine("Wilt u echt uitloggen?");
+
+                                    Console.WriteLine("Heeft u toestemming om wijzingen in te brengen in het systeem type dan 'ja' om verder te gaan");
                                     input = Console.ReadLine();
                                     if (input == "ja")
                                     {
-                                        login = false;
-                                        ID = 0;
-                                        Console.WriteLine("u bent uitgelogt");
-                                        Console.ReadKey();
+
+                                        Console.Clear();
+                                        repo2.StartMenu();
+
+
+
                                     }
                                     break;
 
@@ -174,6 +182,43 @@ namespace registratie88888888
                                     Console.WriteLine("?");
                                     Console.ReadKey();
                                     break;
+
+                                case "4":
+
+                                    Console.WriteLine("voer uw admin key in");
+                                    Console.WriteLine("Admin key == admin");
+                                    input = Console.ReadLine();
+                                    if (input == "admin")
+                                    {
+                                        Console.Clear();
+
+
+                                        repo2.AdminMenu();
+                                        Console.Clear();
+                                    }
+                                    break;
+                                case "5":
+
+                                case "uitloggen":
+                                case "log uit":
+                                    Console.WriteLine("Wilt u echt uitloggen?");
+                                    input = Console.ReadLine();
+                                    if (input == "ja")
+                                    {
+                                        login = false;
+                                        ID = 0;
+                                        Console.WriteLine("u bent uitgelogt");
+                                        Console.ReadKey();
+                                    }
+                                    break;
+
+
+
+
+
+
+
+
                             }
                             Console.Clear();
                             {
@@ -221,12 +266,18 @@ namespace registratie88888888
             username:
 
 
+        username:
+
+            
+
+
             input = Console.ReadLine();
             input = input.ToLower();
             if (input == "")
 
 
             {
+                Console.Clear();
                 Console.WriteLine("Registeren");
                 Console.WriteLine("Voer een gebruikersnaam in");
                 goto username;
@@ -236,9 +287,10 @@ namespace registratie88888888
                 if (name == input)
                 {
                     Console.WriteLine("Deze gebruikersnaam is al in gebruik!");
+
                     Console.ReadKey();
 
-                    Classq.Login();
+                    goto username;
                 }
             }
             username.Add(input);
@@ -273,6 +325,7 @@ namespace registratie88888888
                     writer.WriteLine(date);
                 }
             }
+            Console.Clear();
             Console.WriteLine("Account aanmaken voltooid!");
             Console.ReadKey();
 
@@ -310,8 +363,8 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                //Console.Clear();
-                Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen\n [2] Registreren\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
+                Console.Clear();
+                Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen als medewerker/admin\n [2] Registreren als medewerker/admin\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
 
             }
 
@@ -396,9 +449,9 @@ namespace registratie88888888
                             {
 
                                 string userpremium = Convert.ToString(usernamepremium[ID]);
-                                Console.WriteLine("\nHoofdmenu \nWelkom terug " + userpremium);
+                                Console.WriteLine("\n Hoofd Menu \n Welkom terug " + userpremium);
 
-                                Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
+                                Console.WriteLine("\n [1] Uitloggen\n [2] Wachtwoord veranderen\n [3] Afsluiten");
                                 input = Console.ReadLine();
                                 input.ToLower();
                                 switch (input)
@@ -563,4 +616,3 @@ namespace registratie88888888
         }
     }
 }
-

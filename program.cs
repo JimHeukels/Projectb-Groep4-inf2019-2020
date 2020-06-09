@@ -9,13 +9,22 @@ using System.Text.Json;
 
 namespace JimFilmsTake2
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            // maak de repository aan, de koppeling tussen onze code en de database
-            var repo = new BioscoopRepository();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			// maken een bioscoop met 1 scherm
+			// maak de repository aan, de koppeling tussen onze code en de database
+			//var repo = new BioscoopRepository();
+			//repo.BioscoopKiezen();
+			/*
+            Console.WriteLine("Wilt u een bioscoop toevoegen? Voor de naam en de locatie in");
+            var nieuweBiosNaam = Console.ReadLine();
+            var bioscoop = new Bioscoop(nieuweBiosNaam, "Azaleastraat 15");
+            // wat mock data om te testen
+            var vertoning = new Vertoning(2, 5, DateTime.Now.AddHours(2));
+            var scherm = new Scherm(1);
+            scherm.Vertoningen[vertoning.AanvangsTijd.ToString()] = vertoning;
 
 			//var datumTest = DateTime.Now.AddHours(2);
 			//var TestDatum = DateTime.Now.AddHours(6);
@@ -39,7 +48,7 @@ namespace JimFilmsTake2
 
 			/*
 			var repo2 = new FilmRepository();
-
+			//
 			string input;
 			int ID = 0;
 			bool login = false;
@@ -71,7 +80,7 @@ namespace JimFilmsTake2
 			int antwoordOptie = Convert.ToInt32(Console.ReadLine());
 			if (antwoordOptie == 1)
 			{
-				repo.BioscoopKiezen();
+				Console.WriteLine("U kunt een ticket kopen");
 			}
 			else if (antwoordOptie == 2)
 			{
@@ -88,15 +97,14 @@ namespace JimFilmsTake2
 				{
 
 					case "1":
-					case "inloggen":
-					case "inloggenn":
+					case "inloggen als Medewerker":
+
 						{
 							Console.Clear();
 							Classq.Login();
-							repo2.StartMenu();
 						}
-
 						goto start;
+
 
 
 
@@ -108,11 +116,12 @@ namespace JimFilmsTake2
 							Console.Clear();
 							Classq.Registreer();
 						}
+
 						goto start;
 
 
 
-					case "6":
+					case "5":
 					case "Afsluiten":
 						{
 
@@ -145,11 +154,11 @@ namespace JimFilmsTake2
 						}
 						goto start;
 
-					case "5":
-					case "AdminLogin":
+					case "8":
+					case "Afsluitenn":
 						{
 							Console.Clear();
-							repo2.AdminMenu();
+							Classq.Afsluiten();
 						}
 
 					default2:
@@ -160,7 +169,7 @@ namespace JimFilmsTake2
 				}
 
 			}
-			*/
+
 		}
 
 
@@ -169,8 +178,3 @@ namespace JimFilmsTake2
 }
 
 
-
-
-
-//gitignore test
-//gitignore test 2
