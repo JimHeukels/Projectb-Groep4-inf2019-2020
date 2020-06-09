@@ -130,7 +130,7 @@ namespace registratie88888888
                             string user = Convert.ToString(username[ID]);
                             Console.WriteLine("\n Hoofd Menu \n Welkom terug " + user);
 
-                            Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
+                            Console.WriteLine(" \n(1) Opties bekijken \n(2) Wachtwoord veranderen \n(3) Afsluiten \n(4) Admin menu \n(5) Uitloggen ");
 
                             input = Console.ReadLine();
                             input.ToLower();
@@ -156,7 +156,7 @@ namespace registratie88888888
                                     Console.WriteLine("Voer uw nieuwe wachtwoord in");
                                     input = Console.ReadLine();
                                     password[ID] = input;
-                                    using (TextWriter writer = File.CreateText(filePasswordprem))
+                                    using (TextWriter writer = File.CreateText(filePassword))
                                     {
                                         foreach (string pass in password)
                                         {
@@ -363,7 +363,7 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                Console.WriteLine("\nWelkom bij Nioscoop\n(1) Inloggen\n(2) Registreren\n(3) Een premium acccount aanmaken\n(4) Inloggen met uw premium account\n(5) Inloggen als Administrator\n(6) Afsluiten");
+                Console.WriteLine("\nWelkom bij Nioscoop\n(1) Inloggen\n(2) Registreren\n(3) Een premium acccount aanmaken\n(4) Inloggen met uw premium account\n(5) Afsluiten");
 
             }
 
@@ -466,6 +466,11 @@ namespace registratie88888888
                                             ID = 0;
                                             Console.WriteLine("u bent uitgelogt");
                                             Console.ReadKey();
+                                            {
+                                                
+                                                Classq.Welkom();
+                                                Console.Clear();
+                                            }
                                         }
                                         break;
 
@@ -485,7 +490,7 @@ namespace registratie88888888
                                         }
                                         Console.WriteLine("Wachtwoord veranderd");
                                         Console.ReadKey();
-                                        break;
+                                        goto menu2;
 
                                     case "3":
                                     case "Afsluiten":

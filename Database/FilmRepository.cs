@@ -765,7 +765,7 @@ namespace JimFilmsTake2.Db
                         this._database.Films.Remove(gekozenfilm);
                         UpdateData();
                         Console.WriteLine("De film: " + this._database.Films[verwijderfilm - 1].Titel + " is verwijderd. ");
-                        Console.WriteLine("\nUw beschibare films zijn:");
+                        Console.WriteLine("\nUw beschikbare films zijn:");
                         FilmsTonen();
                         StartMenu();
                     }
