@@ -16,6 +16,7 @@ namespace JimFilmsTake2
             // maken een bioscoop met 1 scherm
             // maak de repository aan, de koppeling tussen onze code en de database
             var repo = new BioscoopRepository();
+			repo.BioscoopKiezen();
 			//repo.BioscoopKiezen();
 			/*
             Console.WriteLine("Wilt u een bioscoop toevoegen? Voor de naam en de locatie in");
@@ -86,6 +87,8 @@ namespace JimFilmsTake2
 			//Console.Clear();
 			//Console.WriteLine("hier komt de big shizzle");
 			//repo.filmNaarBeschikbaar();
+
+			/*
 			var repo2 = new FilmRepository();
 			
 			string input;
@@ -207,7 +210,7 @@ namespace JimFilmsTake2
 						break;
 				}
 
-			}
+			}*/
 			
 		}
 
