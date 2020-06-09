@@ -146,8 +146,6 @@ namespace JimFilmsTake2
 						goto start;
 
 
-
-
 					case "2":
 					case "Registreren":
 
@@ -158,7 +156,6 @@ namespace JimFilmsTake2
 						}
 
 						goto start;
-
 
 
 					case "5":
@@ -174,13 +171,13 @@ namespace JimFilmsTake2
 						Console.ReadKey();
 						break;
 
+
 					case "4":
 					case "premiumlogin":
 						{
 							Console.Clear();
 							Classq.Preminloggen();
 						}
-
 
 						goto start;
 
@@ -193,6 +190,7 @@ namespace JimFilmsTake2
 							Classq.Premregistreer();
 						}
 						goto start;
+
 
 					case "8":
 					case "Afsluitenn":
@@ -218,9 +216,4 @@ namespace JimFilmsTake2
 
 
 	}
-
 }
-
-
-
-
