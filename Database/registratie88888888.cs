@@ -263,7 +263,7 @@ namespace registratie88888888
             var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-            username:
+
 
 
         username:
