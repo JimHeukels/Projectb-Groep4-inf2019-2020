@@ -374,7 +374,7 @@ namespace JimFilmsTake2.Db
 
             Console.WriteLine($"Dit zijn de huidige beschikbare films bij {_database.Bioscopen[biosKeuze].Naam}");
 
-            int filmIndex = 1;
+            //int filmIndex = 1;
             /*
             foreach (var _film in _database.Bioscopen[biosKeuze].BeschikbareFilms)
             {

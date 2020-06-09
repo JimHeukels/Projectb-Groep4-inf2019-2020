@@ -11,7 +11,6 @@ using System.IO;
 using JimFilmsTake2.Db;
 using JimFilmsTake2.Model;
 
-
 namespace registratie88888888
 
 {
@@ -131,7 +130,7 @@ namespace registratie88888888
                             string user = Convert.ToString(username[ID]);
                             Console.WriteLine("\n Hoofd Menu \n Welkom terug " + user);
 
-                            Console.WriteLine("\n [1] Naar uw opties gaan\n [2] Wachtwoord veranderen\n [3] Afsluiten \n [4] Admin menu \n [5] Uitloggen");
+                            Console.WriteLine("\n(1) Uitloggen\n(2) Wachtwoord veranderen\n(3) Afsluiten");
 
                             input = Console.ReadLine();
                             input.ToLower();
@@ -177,6 +176,7 @@ namespace registratie88888888
                                     Console.ReadKey();
                                     Environment.Exit(0);
                                     break;
+
 
                                 default:
                                     Console.WriteLine("?");
@@ -263,7 +263,7 @@ namespace registratie88888888
             var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-            username:
+
 
 
         username:
@@ -363,8 +363,7 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                Console.Clear();
-                Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen als medewerker/admin\n [2] Registreren als medewerker/admin\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
+                Console.WriteLine("\nWelkom bij Nioscoop\n(1) Inloggen\n(2) Registreren\n(3) Een premium acccount aanmaken\n(4) Inloggen met uw premium account\n(5) Inloggen als Administrator\n(6) Afsluiten");
 
             }
 

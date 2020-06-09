@@ -29,13 +29,18 @@ namespace JimFilmsTake2.Model
         public string Schermtype { get; set; }
         public FilmRating Rating { get; set; }
 
-        public Film(string titel, string tijd, string datum, string genre, string beschrijving)
+        public Film(string titel, string tijd, string datum, string genre, string beschrijving, string schermtype, int speelduur)
         {
             this.Titel = titel;
             this.Tijd = tijd;
             this.Datum = datum;
             this.Genre = genre;
             this.Beschrijving = beschrijving;
+            this.Schermtype = schermtype;
+            this.SpeelDuur = speelduur;
+
+            
+
         }
     }
     public class Stoel
