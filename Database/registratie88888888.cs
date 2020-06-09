@@ -10,10 +10,7 @@ namespace registratie88888888
 {
     class Classq
 
-
     {
-
-
         public static void Menu()
         {
             string input;
@@ -43,12 +40,7 @@ namespace registratie88888888
             var jsonusernamepremium = JsonSerializer.Serialize(usernamepremium);
             var tijdregistratie = JsonSerializer.Serialize(time);
 
-
-
-
         }
-
-
 
         public static void Login()
 
@@ -123,9 +115,7 @@ namespace registratie88888888
                         login = true;
                         goto menu1;
 
-
-
-                    menu1:
+                        menu1:
 
                         Console.Clear();
                         {
@@ -154,9 +144,6 @@ namespace registratie88888888
                                     }
                                     break;
 
-
-
-
                                 case "2":
                                 case "Verander het wachtwoord":
                                     Console.WriteLine("Voer uw nieuwe wachtwoord in");
@@ -167,7 +154,6 @@ namespace registratie88888888
                                         foreach (string pass in password)
                                         {
                                             writer.WriteLine(pass);
-
 
                                         }
                                     }
@@ -193,30 +179,13 @@ namespace registratie88888888
                             {
                                 Classq.Welkom();
                             }
-
-
-
-
-
                         }
-
                     }
-
                 }
             }
-
         }
 
-
-
-
-
-
         /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
         public static void Registreer()
 
@@ -249,8 +218,7 @@ namespace registratie88888888
             var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-        username:
-
+            username:
 
 
             input = Console.ReadLine();
@@ -275,7 +243,7 @@ namespace registratie88888888
             }
             username.Add(input);
             Console.WriteLine("Voer uw wachtwoord in: ");
-        password:
+            password:
             input = Console.ReadLine();
             if (input == "")
             {
@@ -308,22 +276,7 @@ namespace registratie88888888
             Console.WriteLine("Account aanmaken voltooid!");
             Console.ReadKey();
 
-
             //////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
         public static void Welkom()
@@ -357,10 +310,10 @@ namespace registratie88888888
                 var tijdregistratie = JsonSerializer.Serialize(time);
 
 
-                Console.WriteLine("\nWelkom bij Nioscoop\n(1) Inloggen\n(2) Registreren\n(3) Een premium acccount aanmaken\n(4) Inloggen met uw premium account\n(5) Inloggen als Administrator\n(6) Afsluiten");
+                //Console.Clear();
+                Console.WriteLine("\n Welkom bij Nioscoop\n [1] Inloggen\n [2] Registreren\n [3] Een premium acccount aanmaken\n [4] Inloggen met uw premium account\n [5] Afsluiten");
 
             }
-
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////
         }
@@ -437,9 +390,7 @@ namespace registratie88888888
                             login = true;
                             goto menu2;
 
-
-                        menu2:
-
+                            menu2:
 
                             Console.Clear();
                             {
@@ -478,7 +429,6 @@ namespace registratie88888888
                                             {
                                                 writer.WriteLine(pass);
 
-
                                             }
                                         }
                                         Console.WriteLine("Wachtwoord veranderd");
@@ -497,19 +447,11 @@ namespace registratie88888888
                                         Console.WriteLine("?");
                                         Console.ReadKey();
                                         break;
-
-
-
                                 }
                                 Console.Clear();
                                 {
                                     Classq.Welkom();
                                 }
-
-
-
-
-
                             }
 
                         }
@@ -552,7 +494,7 @@ namespace registratie88888888
 
 
                 Console.WriteLine("Uw account instellen");
-            usernamepremium:
+                usernamepremium:
                 input = Console.ReadLine();
                 input = input.ToLower();
                 if (input == "")
@@ -573,7 +515,7 @@ namespace registratie88888888
                 }
                 usernamepremium.Add(input);
                 Console.WriteLine("Uw wachtwoord: ");
-            passwordpremium:
+                passwordpremium:
                 input = Console.ReadLine();
                 if (input == "")
                 {
@@ -606,18 +548,8 @@ namespace registratie88888888
                     Console.WriteLine("Account aanmaken voltooid!");
                     Console.ReadKey();
 
-
                 }
-
-
-
-
-
             }
-
-
-
-
         }
         public static void Afsluiten()
         {
@@ -626,13 +558,7 @@ namespace registratie88888888
                 Console.WriteLine("Af aan het sluiten..");
                 Console.ReadKey();
                 Environment.Exit(0);
-
-
-
-
-
             }
-
 
         }
     }

@@ -456,9 +456,6 @@ namespace JimFilmsTake2.Db
                 }
             }
 
-
-
-
         }
         public void FilmToevoegen()
         {

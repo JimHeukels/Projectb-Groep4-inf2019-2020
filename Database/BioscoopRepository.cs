@@ -14,10 +14,6 @@ namespace JimFilmsTake2.Db
         private JsonModel _database { get; set; }
 
 
-
-
-
-
         public BioscoopRepository()
         {
 
@@ -77,7 +73,6 @@ namespace JimFilmsTake2.Db
                         throw new Exception($"Bioscoop met naam {bioscoop.Naam} bestaat heeft al een scherm met nummer {scherm.Nummer}");
                     }
                 }
-
             }
         }
 
@@ -369,12 +364,6 @@ namespace JimFilmsTake2.Db
 
         //jim functies
 
-        //filmNaarBeschikbareFilms
-        //Loop door totale film array heen
-        //welke film wilt u toevoegen?
-        //kies film
-        //aan welke bioscoop wilt u deze film toevoegen?
-        //voeg toe aan beschikbare films
         public void filmNaarBeschikbaar()
         {
             
@@ -431,7 +420,7 @@ namespace JimFilmsTake2.Db
                 if (witlijst.Contains(filmKeuze))
                 {
                     _database.Bioscopen[biosKeuze].BeschikbareFilms.Add(_database.Films[filmKeuze]);
-                    //UpdateData();
+                    UpdateData();
                     //updateData staat nu uitgecomment, zodat niet alle films gelijk worden weggeschreven naar het Json bestand
                     //dit is momenteel makkelijker voor testen aangezien ik nog geen functie heb die films verwijderd uit beschikbareFilms :)
                     heeftGeantwoord = true;
@@ -457,20 +446,45 @@ namespace JimFilmsTake2.Db
         }
 
         //filmUitBeschikbaar
-            //kies bios
-            //loop door beschikbareFilms
-            //laat gebruiker een beschikbarefilm kiezen
-                //verwijdert beschikbare film
+        //kies bios
+        //loop door beschikbareFilms
+        //laat gebruiker een beschikbarefilm kiezen
+        //verwijdert beschikbare film
 
 
 
         //beschikbareFilmsNaarVertoning
-            //laat gebruiker een bios kiezen
-                //loop door totale beschikbare films heen
-                //laat gebruiker film kiezen
-                    //laat gebruiker de rest van de data invoeren
-                        //voeg film toe als vertoning bij bios
-        
+        //laat gebruiker een bios kiezen
+        //loop door totale beschikbare films heen
+        //laat gebruiker film kiezen
+        //laat gebruiker de rest van de data invoeren
+        //voeg film toe als vertoning bij bios
+        public void beschikbareFilmsNaarVertoning()
+        {
+            Console.WriteLine("Welkom bij het voorstellings menu! \n");
+            ToonBioscopen();
+            Console.WriteLine("Aan welke bioscoop wilt u een voorstelling toevoegen? \n");
+
+            int biosKeuze = Convert.ToInt32(Console.ReadLine());
+            biosKeuze -= 1;
+
+            var _bioscoop = _database.Bioscopen[biosKeuze];
+
+            Console.WriteLine($"Dit zijn de huidige voorstellingen bij {_database.Bioscopen[biosKeuze].Naam}");
+
+            int schermIndex = 1;
+
+            foreach (var _schermen in _bioscoop.Schermen)
+            {
+                Console.WriteLine($"Zaal({schermIndex}):");
+                schermIndex += 1;
+                foreach (var _vertoning in _schermen.Vertoningen)
+                {
+                    Console.WriteLine(_vertoning.Key);
+                }
+            }
+          
+        }
 
 
         public void vertoningenTonen()
