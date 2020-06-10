@@ -313,10 +313,10 @@
             "10-6-2020 19:00": {
               "Prijs": 0,
               "Film": {
-                "Titel": "Black Widow",
+                "Titel": "Lord of the Rings: Return of the King",
                 "Tijd": "19:00",
                 "Datum": "10-6-2020",
-                "Genre": "Actie",
+                "Genre": "Avontuur",
                 "SpeelDuur": 154,
                 "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
                 "Schermtype": null,
@@ -589,7 +589,7 @@
                 "Titel": "Lord of the Rings: The Two Towers",
                 "Tijd": "19:00",
                 "Datum": "10-6-2020",
-                "Genre": "Actie",
+                "Genre": "Avontuur",
                 "SpeelDuur": 154,
                 "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
                 "Schermtype": null,
@@ -771,7 +771,7 @@
                 "Titel": "World War Z",
                 "Tijd": "19:00",
                 "Datum": "10-6-2020",
-                "Genre": "Actie",
+                "Genre": "Horror",
                 "SpeelDuur": 154,
                 "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
                 "Schermtype": null,
@@ -950,7 +950,7 @@
             "10-6-2020 20:00": {
               "Prijs": 0,
               "Film": {
-                "Titel": "Black Widow",
+                "Titel": "No Time To Die",
                 "Tijd": "20:00",
                 "Datum": "10-6-2020",
                 "Genre": "Actie",
@@ -972,7 +972,7 @@
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Beschikbaar": true
                 },
                 {
                   "Rij": 0,
