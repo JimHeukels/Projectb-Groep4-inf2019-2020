@@ -467,9 +467,7 @@ namespace registratie88888888
                                             Console.WriteLine("u bent uitgelogt");
                                             Console.ReadKey();
                                             {
-                                                
                                                 Classq.Welkom();
-                                                Console.Clear();
                                             }
                                         }
                                         break;
