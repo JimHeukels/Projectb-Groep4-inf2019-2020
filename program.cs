@@ -86,6 +86,8 @@ namespace JimFilmsTake2
 			//Console.Clear();
 			//Console.WriteLine("hier komt de big shizzle");
 			//repo.filmNaarBeschikbaar();
+
+			var repo = new BioscoopRepository();
 			var repo2 = new FilmRepository();
 
 			string input;
@@ -119,6 +121,7 @@ namespace JimFilmsTake2
 			int antwoordOptie = Convert.ToInt32(Console.ReadLine());
 			if (antwoordOptie == 1)
 			{
+				repo.BioscoopKiezen();
 				Console.WriteLine("U kunt een ticket kopen");
 			}
 			else if (antwoordOptie == 2)

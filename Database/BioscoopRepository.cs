@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using JimFilmsTake2.Model;
 using Newtonsoft.Json;
@@ -13,17 +14,17 @@ namespace JimFilmsTake2.Db
 
         private JsonModel _database { get; set; }
 
-
         public BioscoopRepository()
         {
-
             var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             var FILEPATH = Path.Combine(projectFolder, @"Database/db.json");
             var jsonString = File.ReadAllText(FILEPATH);
+
+
             this._database = new JsonModel();
             if (jsonString == "")
             {
-               UpdateData();
+                UpdateData();
             }
             else
             {
@@ -33,11 +34,12 @@ namespace JimFilmsTake2.Db
         public void UpdateData()
         {
             var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            var FILEPATH = Path.Combine(projectFolder, @"db.json");
+            var FILEPATH = Path.Combine(projectFolder, @"Database/db.json");
+            var jsonString = File.ReadAllText(FILEPATH);
             File.WriteAllText(FILEPATH, JsonConvert.SerializeObject(this._database));
         }
 
-        
+
 
         public void AddBioscoop(Bioscoop bioscoop)
         {
@@ -147,6 +149,7 @@ namespace JimFilmsTake2.Db
 
         public void BioscoopKiezen()
         {
+            Console.Clear();
             //normale klant
             Console.WriteLine("Naar welke locatie wilt u?");
             int BiosIndex = 1;
@@ -156,31 +159,31 @@ namespace JimFilmsTake2.Db
                 BiosIndex++;
             }
 
-            var BioscoopBezoekAns = Convert.ToInt32(Console.ReadLine());
+            var BioscoopBezoekAns = Convert.ToInt32(Console.ReadLine()) - 1;
 
-            while (BioscoopBezoekAns <= 0 || BioscoopBezoekAns >= BiosIndex)
+            while (BioscoopBezoekAns < 0 || BioscoopBezoekAns >= BiosIndex)
             {
                 Console.WriteLine("U heeft een ongeldig nummer ingevoerd.\nProbeer het nog een keer.");
-                BioscoopBezoekAns = Convert.ToInt32(Console.ReadLine());
+                BioscoopBezoekAns = Convert.ToInt32(Console.ReadLine()) - 1;
             }
             if (BioscoopBezoekAns <= BiosIndex & BioscoopBezoekAns >= 0)
             {
-                var BioscoopBezoekNaam = this._database.Bioscopen[BioscoopBezoekAns - 1];
+                var BioscoopBezoekNaam = this._database.Bioscopen[BioscoopBezoekAns];
                 Console.WriteLine($"U heeft gekozen voor {BioscoopBezoekNaam.Naam}.");
                 string GekozenBioscoop = BioscoopBezoekNaam.Naam;
                 FilmKiezen(GekozenBioscoop, BioscoopBezoekAns, BioscoopBezoekNaam.BeschikbareFilms);
             }
 
         }
-        public void FilmKiezen(string bioscoop, int BiosIndex, IList<Film> test)
+        public void FilmKiezen(string bioscoop, int BiosIndex, IList<Film> DoorGeefTest)
         {
             Console.Clear();
             //hier komt films.json
             Console.WriteLine(bioscoop);
-            Console.WriteLine("\nFilms die nu te zien zijn:\n");
+            Console.WriteLine("Films die nu te zien zijn:\n");
 
             int FilmIndex = 1;
-            foreach (var _film in test)
+            foreach (var _film in DoorGeefTest)
             {
                 Console.WriteLine($"({FilmIndex}) {_film.Titel}");
                 FilmIndex++;
@@ -203,59 +206,208 @@ namespace JimFilmsTake2.Db
 
             if (GekozenFilm >= 0 && GekozenFilm < FilmIndex)
             {
-                var FilmBezoekNaam = this._database.Bioscopen[BiosIndex - 1].BeschikbareFilms[GekozenFilm - 1];
+                var FilmBezoekNaam = this._database.Bioscopen[BiosIndex].BeschikbareFilms[GekozenFilm - 1];
                 Console.Clear();
                 Console.WriteLine(bioscoop);
+                string FilmNaam = FilmBezoekNaam.Titel;
                 Console.WriteLine($"Titel: {FilmBezoekNaam.Titel}.");
+                string FilmGenre = FilmBezoekNaam.Genre;
                 Console.WriteLine($"Genre: {FilmBezoekNaam.Genre}");
                 Console.WriteLine($"Beschrijving: {FilmBezoekNaam.Beschrijving}");
-                Console.WriteLine($"Datum: {FilmBezoekNaam.Datum}");
-                Console.WriteLine($"Tijd: {FilmBezoekNaam.Tijd}");
 
                 string TweedeGekozenFilm = FilmBezoekNaam.Titel;
                 Console.WriteLine("\nKlopt het dat u " + TweedeGekozenFilm + " wilt zien?");
-                Console.WriteLine("\nType 1 als dit klopt of type 2 als dit niet klopt");
+                Console.WriteLine("\nTyp 1 als u de tijden van deze film wilt zien, typ 2 als u gerelateerde films wilt zien of typ 3 als u een andere film wilt selecteren.");
                 int FilmCheck = Convert.ToInt32(Console.ReadLine());
 
-                while (FilmCheck < 1 || FilmCheck > 2)
+                while (FilmCheck < 1 || FilmCheck > 3)
                 {
-                    Console.WriteLine("U kunt alleen maar 1 of 2 kiezen.");
+                    Console.WriteLine("U kunt alleen maar 1, 2 of 3 kiezen.");
                     FilmCheck = Convert.ToInt32(Console.ReadLine());
                 }
 
                 if (FilmCheck == 1)
                 {
-                    StoelenKiezen(TweedeGekozenFilm, bioscoop, GekozenFilm, BiosIndex - 1, test);
+                    FilmVertoningen(bioscoop, BiosIndex, TweedeGekozenFilm, GekozenFilm, DoorGeefTest);
                 }
 
-                else if (FilmCheck == 2)
+                if (FilmCheck == 2)
                 {
-                    FilmKiezen(bioscoop, BiosIndex, test);
+                    GerelateerdeFilms(FilmGenre, FilmNaam, DoorGeefTest, bioscoop, BiosIndex);
+                }
+
+                if (FilmCheck == 3)
+                {
+                    FilmKiezen(bioscoop, BiosIndex, DoorGeefTest);
                 }
             }
         }
 
-        public void StoelenKiezen(string Film, string Bioscoop, int FilmIndex, int BiosIndex, IList<Film> VoorTerugFunctie)
+        public void GerelateerdeFilms(string Genre, string Film, IList<Film> VoorTerugFunctie, string bioscoop, int BiosIndex)
         {
             Console.Clear();
-            var StoelKiezen1 = this._database.Bioscopen[BiosIndex].Schermen[0].Vertoningen["24/05/2020 18:00"].Zitplaatsen;
+            Console.WriteLine(bioscoop);
+            Console.WriteLine("Films met hetzelfde genre");
+            int FilmIndex = 0;
+            int count = 1;
+            int GerelateerdeFilmsv2 = 0;
+            var FilmTuple = new List<Tuple<int, string>>
+            {
+
+            };
+
+            foreach (var film in VoorTerugFunctie)
+            {
+                if (film.Genre == Genre && film.Titel != Film)
+                {
+                    FilmTuple.Add(new Tuple<int, string>(FilmIndex, film.Titel));
+                    Console.WriteLine($"({count}) {film.Titel}");
+                    GerelateerdeFilmsv2++;
+                    count++;
+                }
+                FilmIndex++;
+
+                if (FilmIndex == VoorTerugFunctie.Count && GerelateerdeFilmsv2 > 0)
+                {
+                    var GekozenFilm = Convert.ToInt32(Console.ReadLine()) - 1;
+                    while (GekozenFilm < 0 || GekozenFilm > GerelateerdeFilmsv2 - 1)
+                    {
+                        Console.WriteLine("U heeft een ongeldig nummer ingevuld, probeer het nog een keer");
+                        GekozenFilm = Convert.ToInt32(Console.ReadLine()) - 1;
+                    }
+                    var TweedeGekozenFilm = FilmTuple[GekozenFilm].Item2;
+
+                    Console.Clear();
+                    Console.WriteLine($"U heeft gekozen voor {FilmTuple[GekozenFilm].Item2}\nTyp 1 als u de tijden voor deze film wilt zien of typ 2 als u een andere film wilt zien");
+                    var FilmCheck = Convert.ToInt32(Console.ReadLine());
+                    while (FilmCheck < 1 || FilmCheck > 2)
+                    {
+                        Console.WriteLine("U kunt alleen maar 1 of 2 kiezen.");
+                        FilmCheck = Convert.ToInt32(Console.ReadLine());
+                    }
+
+                    if (FilmCheck == 1)
+                    {
+                        FilmVertoningen(bioscoop, BiosIndex, TweedeGekozenFilm, FilmTuple[GekozenFilm].Item1, VoorTerugFunctie);
+                    }
+                    if (FilmCheck == 2)
+                    {
+                        FilmKiezen(bioscoop, BiosIndex, VoorTerugFunctie);
+                    }
+                }
+            }
+
+            if (GerelateerdeFilmsv2 == 0)
+            {
+                Console.WriteLine("Er draaien momenteel geen films met hetzelfde genre.\nDruk op enter om terug naar de films te gaan");
+                Console.ReadLine();
+                FilmKiezen(bioscoop, BiosIndex, VoorTerugFunctie);
+            }
+        }
+
+        public void FilmVertoningen(string bioscoop, int BiosIndex, string TweedeGekozenFilm, int GekozenFilm, IList<Film> VoorTerugFunctie)
+        {
+            Console.Clear();
+            Console.WriteLine($"{bioscoop}");
+            var Bioscoop = _database.Bioscopen[BiosIndex];
+            Console.WriteLine($"{TweedeGekozenFilm}\n");
+            var poging = this._database.Bioscopen[BiosIndex].Schermen.Count;
+            int count = 1;
+            int CountForExit = 1;
+            var TupleTest = new List<Tuple<int, string>>
+            {
+
+            };
+
+            foreach (var schermen in Bioscoop.Schermen)
+            {
+                var Scherm = schermen.Nummer - 1;
+                foreach (var vertoningen in schermen.Vertoningen)
+                {
+                    var placeholder = vertoningen.Key;
+                    var testje = this._database.Bioscopen[BiosIndex].Schermen[Scherm].Vertoningen[placeholder].Film.Titel;
+
+                    if (TweedeGekozenFilm == testje)
+                    {
+                        var Doorgeven = vertoningen.Key;
+                        Console.WriteLine($"({count}) {vertoningen.Key}");
+                        count++;
+                        TupleTest.Add(new Tuple<int, string>(Scherm, vertoningen.Key));
+                        
+                    }
+                    CountForExit++;
+                    if (CountForExit == poging + 1)
+                    {
+                        Console.WriteLine("Typ het nummer van de tijd die u wilt bezoeken");
+                        int GekozenVoorstelling = Convert.ToInt32(Console.ReadLine());
+                        while (GekozenVoorstelling < 1 || GekozenVoorstelling >= count)
+                        {
+                            Console.WriteLine("U heeft een ongeldig nummer getypt, probeer het nog een keer.");
+                            GekozenVoorstelling = Convert.ToInt32(Console.ReadLine());
+                        }
+                        int GekozenScherm = TupleTest[GekozenVoorstelling - 1].Item1;
+                        string VertoningKey = TupleTest[GekozenVoorstelling - 1].Item2;
+                        var test = this._database.Bioscopen[BiosIndex].Schermen[GekozenScherm].Vertoningen[VertoningKey];
+
+                        Console.WriteLine($"U heeft gekozen voor de voorstelling van {VertoningKey}");
+
+                        Console.WriteLine("Typ 1 als dit klopt, typ 2 als dit niet klopt of typ 3 als u een andere film wilt kiezen.");
+                        int VertoningCheck = Convert.ToInt32(Console.ReadLine());
+                        while (VertoningCheck < 1 || VertoningCheck > 3)
+                        {
+                            Console.WriteLine("U kunt alleen maar 1, 2 of 3 kiezen.");
+                            VertoningCheck = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        if (VertoningCheck == 1)
+                        {
+                            StoelenKiezen(TweedeGekozenFilm, bioscoop, GekozenFilm, BiosIndex, VoorTerugFunctie, GekozenScherm, VertoningKey);
+                        }
+                        if (VertoningCheck == 2)
+                        {
+                            FilmVertoningen(bioscoop, BiosIndex, TweedeGekozenFilm, GekozenFilm, VoorTerugFunctie);
+                        }
+                        if (VertoningCheck == 3)
+                        {
+                            FilmKiezen(bioscoop, BiosIndex, VoorTerugFunctie);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void StoelenKiezen(string Film, string Bioscoop, int FilmIndex, int BiosIndex, IList<Film> VoorTerugFunctie, int GekozenScherm, string VertoningKey)
+        {
+            Console.Clear();
+            var StoelKiezen1 = this._database.Bioscopen[BiosIndex].Schermen[GekozenScherm].Vertoningen[VertoningKey].Zitplaatsen;
 
 
             Console.WriteLine(Bioscoop);
             Console.WriteLine("Film: " + Film);
-            Console.WriteLine("Hoeveel zitplaatsen wilt u reserveren");
+            Console.WriteLine($"Tijd: {VertoningKey}");
+            Console.WriteLine("Hoeveel zitplaatsen wilt u reserveren, als u 999 typt kunt u een andere film kiezen");
+            var ResetList = new List<int>();
+
             int Hoeveelheid = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Beschikbare zitplaatsen.");
-            int StoelIndex = 1;
-            string GekozenStoelen = "";
-            string test = "";
             if (Hoeveelheid == 999)
             {
                 FilmKiezen(Bioscoop, BiosIndex, VoorTerugFunctie);
             }
+
+            while (Hoeveelheid < 1 || Hoeveelheid > StoelKiezen1.Count)
+            {
+                Console.WriteLine("U heeft een ongeldige hoeveelheid zitplaatsen ingevoerd, probeer het nog een keer");
+                Hoeveelheid = Convert.ToInt32(Console.ReadLine());
+            }
+            
+            Console.WriteLine("Beschikbare zitplaatsen.\nTyp het linker nummer van de zitplaats die u wilt.");
+            int StoelIndex = 1;
+            string GekozenStoelen = "";
+            string test = "";
             int test123 = StoelKiezen1.Count;
             var probeersel = ((test123) / (StoelKiezen1[test123 - 1].Rij + 1));
 
+            //Dit laat de stoelen en rijen zien in de console
             while (StoelIndex <= StoelKiezen1.Count)
             {
                 int CurrentSeat = StoelIndex;
@@ -283,23 +435,29 @@ namespace JimFilmsTake2.Db
 
             while (Hoeveelheid > 0)
             {
-                var test12 = Convert.ToInt32(Console.ReadLine());
-                while (StoelKiezen1[test12 - 1].Beschikbaar == true)
+                var GekozenStoel = Convert.ToInt32(Console.ReadLine());
+                while (GekozenStoel < 1 || GekozenStoel > StoelKiezen1.Count)
+                {
+                    Console.WriteLine("Deze zitplaats bestaat niet, probeer het nog een keer");
+                    GekozenStoel = Convert.ToInt32(Console.ReadLine());
+                }
+                while (StoelKiezen1[GekozenStoel - 1].Beschikbaar == true)
                 {
                     Console.WriteLine("Deze stoel is bezet, probeer het nog een keer");
-                    test12 = Convert.ToInt32(Console.ReadLine());
+                    GekozenStoel = Convert.ToInt32(Console.ReadLine());
                 }
 
-                if (StoelKiezen1[test12].Beschikbaar == false)
+                if (StoelKiezen1[GekozenStoel - 1].Beschikbaar == false)
                 {
-                    Console.WriteLine($"{StoelKiezen1[test12].Rij + 1} {StoelKiezen1[test12].Nummer}");
-                    StoelKiezen1[test12 - 1].Beschikbaar = true;
+                    Console.WriteLine($"{StoelKiezen1[GekozenStoel - 1].Rij + 1} {StoelKiezen1[GekozenStoel - 1].Nummer}");
+                    StoelKiezen1[GekozenStoel - 1].Beschikbaar = true;
+                    ResetList.Add(GekozenStoel - 1);
                     UpdateData();
                 }
                 Console.Clear();
                 Console.WriteLine(Bioscoop);
                 Console.WriteLine("Film: " + Film);
-                Console.WriteLine($"U kunt nog {Hoeveelheid - 1} zitplaatsen kiezen.");
+                Console.WriteLine($"U kunt nog {Hoeveelheid - 1} zitplaatsen kiezen.\nTyp het linker nummer van de zitplaats die u wilt.");
 
 
                 StoelIndex = 1;
@@ -326,7 +484,7 @@ namespace JimFilmsTake2.Db
                         Console.WriteLine(test);
                     }
                 }
-                string text = $"({StoelKiezen1[test12 - 1].Rij + 1}:{StoelKiezen1[test12 - 1].Nummer + 1})\n";
+                string text = $"({StoelKiezen1[GekozenStoel - 1].Rij + 1}:{StoelKiezen1[GekozenStoel - 1].Nummer + 1})\n";
                 GekozenStoelen += text;
                 Console.WriteLine($"Gekozen stoelen:\n{GekozenStoelen}");
 
@@ -338,7 +496,7 @@ namespace JimFilmsTake2.Db
                 Console.Clear();
                 Console.WriteLine(Bioscoop);
                 Console.WriteLine($"Gekozen stoelen:\n{GekozenStoelen}");
-                Console.WriteLine("Klopt dit?\nType 1 als het klopt of type 2 als het niet klopt.");
+                Console.WriteLine("Klopt dit?\nTyp 1 als het klopt of typ 2 als het niet klopt.");
                 int DoorGeven = Convert.ToInt32(Console.ReadLine());
                 if (DoorGeven == 1)
                 {
@@ -346,10 +504,14 @@ namespace JimFilmsTake2.Db
                 }
                 else
                 {
-                    StoelenKiezen(Film, Bioscoop, FilmIndex, BiosIndex, VoorTerugFunctie);
+                    foreach (var Stoel in ResetList)
+                    {
+                        StoelKiezen1[Stoel].Beschikbaar = false;
+                    }
+                    UpdateData();
+                    StoelenKiezen(Film, Bioscoop, FilmIndex, BiosIndex, VoorTerugFunctie, GekozenScherm, VertoningKey);
                 }
             }
-
         }
 
         public void Kosten(string Film, string Bioscoop)
@@ -519,7 +681,7 @@ namespace JimFilmsTake2.Db
             ToonBioscopen();
 
             Console.WriteLine("\n Voer het nummer van de Bioscoop in waarvan u de voorstellingen wilt zien.");
-            int antwoord = Convert.ToInt32(Console.ReadLine());
+            int antwoord = Convert.ToInt32(Console.ReadLine()) - 1;
 
             var bioscopen = _database.Bioscopen;
             var gekozenBios = bioscopen[antwoord];
