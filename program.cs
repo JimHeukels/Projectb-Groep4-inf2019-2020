@@ -144,7 +144,7 @@ namespace JimFilmsTake2
 						{
 							Console.Clear();
 							Classq.Login();
-							
+							repo2.StartMenu();
 						}
 						goto start;
 
@@ -213,6 +213,8 @@ namespace JimFilmsTake2
 
 		}
 
-	}
 
-}
+
+
+
+
