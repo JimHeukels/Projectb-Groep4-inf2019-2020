@@ -56,7 +56,7 @@ namespace JimFilmsTake2.Db
             return _database.Films;
         }
 
-        public void StartMenu()
+        public void StartMenu()//begin menu van medewerker
 
         {
             Console.WriteLine("\nSelecteer uit de volgende opties:");
@@ -68,7 +68,7 @@ namespace JimFilmsTake2.Db
             Optie(OptieKiezen);
         }
 
-        public void Optie(int OptieKiezen)
+        public void Optie(int OptieKiezen) //hiermee roep je alle functies aan voor medewerker
 
         {
             Console.Clear();
@@ -115,12 +115,17 @@ namespace JimFilmsTake2.Db
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("Welkom terug bij het menu");
                     StartMenu();
                 }
 
-                Console.WriteLine("\n\nU heeft niet gekozen uit de beschikbare opties.");
-                //Programs.StartMenu(totalfilms); 
+        
+            }
+            else
+            {
+                Console.Clear();
+                Console.Write("De ingevoerde index klopt niet, probeer nog een keer");
             }
         }
         public void AdminMenu()
@@ -836,10 +841,14 @@ namespace JimFilmsTake2.Db
                     Console.WriteLine("\nKies welke genre de film" + filmtoevoegen + " heeft:");
                     List<string> genre = new List<string>()
                     {
-                        Console.Clear();
-                        Console.WriteLine("Welkom terug bij de functie: film aanpassen");
-                        FilmAanpassen();
+                        "Horror","Comedie","Actie", "Documentaire", "Romantiek", "Animatie", "Drama", "Familiefilm"
 
+                    };
+                    int index = 1;
+                    for (int i = 0; i < genre.Count; i++)
+                    {
+                        Console.WriteLine($"{index} {genre[i]}");
+                        index++;
                     }
                     Console.WriteLine("\nTyp de index van het genre: ");
                     int gekozen = Convert.ToInt32(Console.ReadLine());
