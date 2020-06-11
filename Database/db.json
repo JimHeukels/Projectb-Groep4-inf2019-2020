@@ -145,14 +145,14 @@
                   "Rij": 0,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
-                  "Naam": "lenna",
+                  "Naam": null,
                   "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
-                  "Naam": "lenna",
+                  "Naam": null,
                   "Bezet": false
                 },
                 {

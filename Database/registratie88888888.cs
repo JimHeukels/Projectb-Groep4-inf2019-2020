@@ -84,7 +84,6 @@ namespace registratie88888888
             if (antwoordOptie == 1)
             {
                 repo.BioscoopKiezen();
-                Console.WriteLine("U kunt een ticket kopen");
             }
             else if (antwoordOptie == 2)
             {

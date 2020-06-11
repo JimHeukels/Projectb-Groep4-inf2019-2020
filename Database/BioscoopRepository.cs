@@ -599,12 +599,14 @@ namespace JimFilmsTake2.Db
                 {
                     Kosten(Film, Bioscoop, ResetList, BiosIndex, GekozenScherm, VertoningKey);
                 }
-                else
+                else if (DoorGevenV2 == 2)
                 {
                     foreach (var Stoel in ResetList)
                     {
                         StoelKiezen1[Stoel].Bezet = false;
+                        StoelKiezen1[Stoel].Naam = null;
                     }
+                    ResetList.Clear();
                     UpdateData();
                     StoelenKiezen(Film, Bioscoop, FilmIndex, BiosIndex, VoorTerugFunctie, GekozenScherm, VertoningKey);
                 }
@@ -654,6 +656,10 @@ namespace JimFilmsTake2.Db
             var Afsluiten = Console.ReadLine();
             var isNumeric = int.TryParse(Afsluiten, out int AfsluitenV2);
 
+            if (isNumeric == false)
+            {
+                Environment.Exit(0);
+            }
             if (AfsluitenV2 == 1)
             {
                 var Startmenu = new Classq();
