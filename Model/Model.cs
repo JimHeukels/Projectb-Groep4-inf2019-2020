@@ -39,7 +39,7 @@ namespace JimFilmsTake2.Model
             this.Schermtype = schermtype;
             this.SpeelDuur = speelduur;
 
-            
+
 
         }
     }
@@ -50,7 +50,7 @@ namespace JimFilmsTake2.Model
         public int ReserveringsNummer { get; set; }
         public string Naam { get; set; }
         public bool Bezet { get; set; }
-        public bool PremiumReservering{ get; set; }
+        public bool PremiumReservering { get; set; }
         public Stoel(int rij, int nummer)
         {
             this.Rij = rij;
@@ -127,6 +127,19 @@ namespace JimFilmsTake2.Model
         {
             this.TicketPrijs = TicketPrijs;
             this.TypeTicket = TypeTicket;
+        }
+    }
+    public class Korting
+    {
+        public IList<Korting> Kortingen { get; set; }
+
+        public int VerrekendeKorting { get; set; }
+        public string TypeKorting { get; set; }
+
+        public Korting(int VerrekendeKorting, string TypeKorting)
+        {
+            this.VerrekendeKorting = VerrekendeKorting;
+            this.TypeKorting = TypeKorting;
         }
     }
 }

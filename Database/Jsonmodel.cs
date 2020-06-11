@@ -13,11 +13,14 @@ namespace JimFilmsTake2.Db
         public IList<Bioscoop> Bioscopen { get; set; }
 
         public IList<Ticket> Tickets { get; set; }
+
+        public IList<Korting> Kortingen { get; set; }
         public JsonModel()
         {
             this.Films = new List<Film>();
             this.Bioscopen = new List<Bioscoop>();
             this.Tickets = new List<Ticket>();
+            this.Kortingen = new List<Korting>();
         }
     }
 }
