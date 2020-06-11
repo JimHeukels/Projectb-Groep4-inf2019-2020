@@ -836,14 +836,10 @@ namespace JimFilmsTake2.Db
                     Console.WriteLine("\nKies welke genre de film" + filmtoevoegen + " heeft:");
                     List<string> genre = new List<string>()
                     {
-                        "Horror","Comedie","Actie", "Documentaire", "Romantiek", "Animatie", "Drama", "Familiefilm"
+                        Console.Clear();
+                        Console.WriteLine("Welkom terug bij de functie: film aanpassen");
+                        FilmAanpassen();
 
-                    };
-                    int index = 1;
-                    for (int i = 0; i < genre.Count; i++)
-                    {
-                        Console.WriteLine($"{index} {genre[i]}");
-                        index++;
                     }
                     Console.WriteLine("\nTyp de index van het genre: ");
                     int gekozen = Convert.ToInt32(Console.ReadLine());
