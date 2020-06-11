@@ -106,7 +106,7 @@ namespace registratie88888888
                         {
                             Console.Clear();
                             Classq.Login();
-                            repo2.StartMenu();
+
                         }
                         goto start;
 
