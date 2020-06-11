@@ -49,7 +49,8 @@ namespace JimFilmsTake2.Model
         public int Nummer { get; set; }
         public int ReserveringsNummer { get; set; }
         public string Naam { get; set; }
-        public bool Beschikbaar { get; set; }
+        public bool Bezet { get; set; }
+        public bool PremiumReservering{ get; set; }
         public Stoel(int rij, int nummer)
         {
             this.Rij = rij;

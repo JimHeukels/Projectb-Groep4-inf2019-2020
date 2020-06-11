@@ -110,6 +110,17 @@ namespace JimFilmsTake2.Db
             }
         }
 
+        public void toonBeschikbareFilms(int keuze)
+        {
+            int filmIndex = 1;
+            foreach(var _films in this._database.Bioscopen[keuze].BeschikbareFilms)
+            {
+                Console.WriteLine($"({filmIndex}) {_films.Titel}");
+                filmIndex += 1;
+
+            }
+        }
+
         public void VerwijderBioscoop()
         {
             Console.WriteLine("wilt u een bioscoop verwijderen? J/N");
@@ -417,7 +428,7 @@ namespace JimFilmsTake2.Db
                     test += ($"\nRij {StoelKiezen1[StoelIndex].Rij + 1}: ");
                 }
 
-                if (StoelKiezen1[StoelIndex - 1].Beschikbaar == true)
+                if (StoelKiezen1[StoelIndex - 1].Bezet == true)
                 {
                     test += $"(-X-), ";
                 }
@@ -441,16 +452,16 @@ namespace JimFilmsTake2.Db
                     Console.WriteLine("Deze zitplaats bestaat niet, probeer het nog een keer");
                     GekozenStoel = Convert.ToInt32(Console.ReadLine());
                 }
-                while (StoelKiezen1[GekozenStoel - 1].Beschikbaar == true)
+                while (StoelKiezen1[GekozenStoel - 1].Bezet == true)
                 {
                     Console.WriteLine("Deze stoel is bezet, probeer het nog een keer");
                     GekozenStoel = Convert.ToInt32(Console.ReadLine());
                 }
 
-                if (StoelKiezen1[GekozenStoel - 1].Beschikbaar == false)
+                if (StoelKiezen1[GekozenStoel - 1].Bezet == false)
                 {
                     Console.WriteLine($"{StoelKiezen1[GekozenStoel - 1].Rij + 1} {StoelKiezen1[GekozenStoel - 1].Nummer}");
-                    StoelKiezen1[GekozenStoel - 1].Beschikbaar = true;
+                    StoelKiezen1[GekozenStoel - 1].Bezet = true;
                     ResetList.Add(GekozenStoel - 1);
                     UpdateData();
                 }
@@ -470,7 +481,7 @@ namespace JimFilmsTake2.Db
                     {
                         test += ($"\nRij {StoelKiezen1[StoelIndex].Rij + 1}: ");
                     }
-                    if (StoelKiezen1[StoelIndex - 1].Beschikbaar == true)
+                    if (StoelKiezen1[StoelIndex - 1].Bezet == true)
                     {
                         test += $"(-X-), ";
                     }
@@ -506,7 +517,7 @@ namespace JimFilmsTake2.Db
                 {
                     foreach (var Stoel in ResetList)
                     {
-                        StoelKiezen1[Stoel].Beschikbaar = false;
+                        StoelKiezen1[Stoel].Bezet = false;
                     }
                     UpdateData();
                     StoelenKiezen(Film, Bioscoop, FilmIndex, BiosIndex, VoorTerugFunctie, GekozenScherm, VertoningKey);
@@ -534,7 +545,7 @@ namespace JimFilmsTake2.Db
             int biosKeuze = Convert.ToInt32(Console.ReadLine());
             biosKeuze -= 1;
 
-            Console.WriteLine($"Dit zijn de huidige beschikbare films bij {_database.Bioscopen[biosKeuze].Naam}");
+            Console.WriteLine($"\nDit zijn de huidige beschikbare films bij {_database.Bioscopen[biosKeuze].Naam}\n");
 
             //int filmIndex = 1;
             /*
@@ -545,12 +556,10 @@ namespace JimFilmsTake2.Db
             */
 
             _database.Bioscopen[biosKeuze].BeschikbareFilms.PrintAllWithIndex(x => x.Titel);
+            Console.WriteLine("\n\n");
 
 
-            Console.WriteLine("dit zijn alle biosjes in het systeem");
-            _database.Bioscopen.PrintAllWithIndex(x => x.Naam);
-
-            Console.WriteLine("Deze films bevinden zich in de database en nog niet in het aanbod van deze bioscoop:");
+            Console.WriteLine("Deze films bevinden zich in de database en nog niet in het aanbod van deze bioscoop:\n");
             var witlijst = new List<int>();
             for(int i = 0; i < _database.Films.Count; i ++)
             {
@@ -577,13 +586,13 @@ namespace JimFilmsTake2.Db
             var heeftGeantwoord = false;
             while (!heeftGeantwoord)
             {
-                Console.WriteLine("Welke film wilt u toevoegen aan het bioscoop aanbod?");
+                Console.WriteLine("\n\nWelke film wilt u toevoegen aan het bioscoop aanbod?");
                 int filmKeuze = Convert.ToInt32(Console.ReadLine());
                 if (witlijst.Contains(filmKeuze))
                 {
                     _database.Bioscopen[biosKeuze].BeschikbareFilms.Add(_database.Films[filmKeuze]);
                     UpdateData();
-                    //updateData staat nu uitgecomment, zodat niet alle films gelijk worden weggeschreven naar het Json bestand
+                    
                     //dit is momenteel makkelijker voor testen aangezien ik nog geen functie heb die films verwijderd uit beschikbareFilms :)
                     heeftGeantwoord = true;
                 }
@@ -638,14 +647,95 @@ namespace JimFilmsTake2.Db
 
             foreach (var _schermen in _bioscoop.Schermen)
             {
-                Console.WriteLine($"Zaal({schermIndex}):");
+                Console.WriteLine($"Voorstelling({schermIndex}):");
                 schermIndex += 1;
                 foreach (var _vertoning in _schermen.Vertoningen)
                 {
-                    Console.WriteLine(_vertoning.Key);
+                    var huidigeKey = _vertoning.Key;
+                    Console.WriteLine(_schermen.Vertoningen[huidigeKey].Film.Titel);
+                    Console.WriteLine(_schermen.Vertoningen[huidigeKey].Film.Datum);
+                    Console.WriteLine("\n");
+                    
                 }
             }
-          
+
+            Console.WriteLine("Wilt u een vertoning toevoegen? \n Voer 'ja' in om door te gaan. Voer 'nee' in om terug te gaan naar het menu.");
+            var keuze = Console.ReadLine();
+            if (keuze == "Ja" || keuze == "ja")
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine("Welke Film uit het aanbod van deze bioscoop wilt u toevoegen als voorstelling?\n");
+                toonBeschikbareFilms(biosKeuze);
+                Console.WriteLine("Voer het nummer in van de film die u wilt toevoegen\n");
+                var toevoegKeuze = Convert.ToInt32(Console.ReadLine()) -1;
+
+                Console.WriteLine(toevoegKeuze);
+
+
+                Console.WriteLine($"Op de locatie {_database.Bioscopen[biosKeuze].Naam} bevinden zich de volgende zalen: \n");
+                foreach(var _scherm in _bioscoop.Schermen)
+                {
+                    Console.WriteLine($"Zaal nummer ({_scherm.Nummer})");
+                }
+                Console.WriteLine("Aan welke zaal wilt u een voorstelling toevoegen?\n");
+                int zaalKeuze = Convert.ToInt32(Console.ReadLine()) -1;
+                
+                var gekozenzaal = _bioscoop.Schermen[zaalKeuze];
+                int aantalRijen = 5;
+                int stoelenPerRij = 10;
+
+                //in de database staan de stoelen + rijen momenteel gekoppeld aan "zitplaatsen" wat zich binnenin een vertoning bevind
+                //hierdoor zijn stoelen/rijen niet direct gekoppeld aan een zaal. Hierdoor kan ik ze nu niet makkelijk ophalen zonder een voorgaande vertoning aan te roepen
+                //dit betekent dat ik dus niet een nieuwe vertoning aan kan maken met het aantal rijen/stoelen uit een zaal, zonder voorgaande vertoning
+                //hierdoor kies ik nu er dus even voor om hard coded met 5 rijen aan stoelen te werken, met elk 10 stoelen per rij.
+
+                //todo: geef zitplaatsen een eigen plek binnen de zaal in de database ipv de zitplaatsen in een vertoning te hebben staan.
+
+                Console.WriteLine("Typ op welke datum de voorstelling moet draaien: voorbeeld 23-03-2020");
+                string toevoegFilmDatum = Console.ReadLine();
+
+                Console.WriteLine("Typ om welke tijd de voorstelling moet draaien: voorbeeld: 12:00");
+                string toevoegFilmTijd = Console.ReadLine();
+
+                string datum = toevoegFilmDatum + " " + toevoegFilmTijd;
+
+                DateTime datum2 = Convert.ToDateTime(datum);
+
+                //nieuwe vertoning aanmaken met aantal rijen, aantal stoelen, datetime
+
+                var nieuweVertoning = new Vertoning(aantalRijen, stoelenPerRij, datum2);
+               
+                var toevoegFilm = _database.Bioscopen[biosKeuze].BeschikbareFilms[toevoegKeuze];
+                toevoegFilm.Datum = toevoegFilmDatum;
+                toevoegFilm.Tijd = toevoegFilmTijd;
+
+
+                nieuweVertoning.Film = toevoegFilm;
+
+                
+                string toevoegKey = toevoegFilmDatum + " " + toevoegFilmTijd;
+
+                Console.WriteLine(toevoegKey);
+
+                
+                _database.Bioscopen[biosKeuze].Schermen[zaalKeuze].Vertoningen.Add(toevoegKey, nieuweVertoning);
+
+                UpdateData();
+
+            }
+            else if (keuze == "Nee" || keuze == "nee")
+            {
+                beschikbareFilmsNaarVertoning();
+
+            }
+
+            else
+            {
+                Console.WriteLine("foutieve invoer.");
+                //Dit zou wellicht anders afgevangen kunnen worden
+                beschikbareFilmsNaarVertoning();
+            }
         }
 
 
@@ -669,14 +759,12 @@ namespace JimFilmsTake2.Db
             }
         }
 
-
-        
-        
+   
         public void toonVertoningen()
+        {
             //Volgens mij is deze functie werkend, alleen heb ik het alleen nog maar getest met weinig schermen / vertoningen
             //Zal dit nader testen als ik andere functies werkend heb waarmee ik die toe kan voegen aan de database.
-                // ook kan ik nog geen film gegevens ophalen per vertoning omdat films nog niet gekoppeld zijn aan vertoningen :)
-        {
+            // ook kan ik nog geen film gegevens ophalen per vertoning omdat films nog niet gekoppeld zijn aan vertoningen :)
             Console.WriteLine("Van welke bioscoop wilt u de huidige voorstellingen zien?");
             ToonBioscopen();
 
