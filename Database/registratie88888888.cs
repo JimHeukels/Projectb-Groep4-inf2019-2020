@@ -14,7 +14,7 @@ using JimFilmsTake2.Model;
 namespace registratie88888888
 
 {
-    class Classq
+    public class Classq
 
     {
         public static void Menu()
@@ -47,7 +47,139 @@ namespace registratie88888888
             var tijdregistratie = JsonSerializer.Serialize(time);
 
         }
+        public void test()
+        {
+            var repo = new BioscoopRepository();
+            var repo2 = new FilmRepository();
 
+            string input;
+            int ID = 0;
+            bool login = false;
+
+            var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            var fileUsername = Path.Combine(projectFolder, @"username.json");
+            string[] usernameArray = File.ReadAllLines(fileUsername);
+            ArrayList username = new ArrayList(usernameArray);
+            var filePassword = Path.Combine(projectFolder, @"password.json");
+            string[] passwordArray = File.ReadAllLines(filePassword);
+            ArrayList password = new ArrayList(passwordArray);
+            var fileUsernameprem = Path.Combine(projectFolder, @"usernamepremium.json");
+            string[] usernamepremiumArray = File.ReadAllLines(fileUsernameprem);
+            ArrayList usernamepremium = new ArrayList(usernamepremiumArray);
+            var filePasswordprem = Path.Combine(projectFolder, @"passwordpremium.json");
+            string[] passwordpremiumArray = File.ReadAllLines(filePasswordprem);
+            ArrayList passwordpremium = new ArrayList(passwordpremiumArray);
+            var fileTime = Path.Combine(projectFolder, @"time.json");
+            string[] timeArray = File.ReadAllLines(fileTime);
+            ArrayList time = new ArrayList(timeArray);
+            var jsonusername = JsonSerializer.Serialize(username);
+            var jsonspassword = JsonSerializer.Serialize(password);
+            var jsonspremiumpassword = JsonSerializer.Serialize(passwordpremium);
+            var jsonusernamepremium = JsonSerializer.Serialize(usernamepremium);
+            var tijdregistratie = JsonSerializer.Serialize(time);
+
+            Console.WriteLine("Welkom bij Nioscoop");
+            Console.WriteLine("Kies uw optie:\n(1) U wilt een ticket kopen\n(2) U wilt zich aanmelden/registreren");
+            int antwoordOptie = Convert.ToInt32(Console.ReadLine());
+            if (antwoordOptie == 1)
+            {
+                repo.BioscoopKiezen();
+                Console.WriteLine("U kunt een ticket kopen");
+            }
+            else if (antwoordOptie == 2)
+            {
+            start:
+                if (login == true)
+                {
+                    Console.Clear();
+                    Classq.Menu();
+                }
+                Classq.Welkom();
+                input = Console.ReadLine();
+                switch (input)
+
+                {
+
+                    case "1":
+                    case "inloggen als Medewerker":
+
+                        {
+                            Console.Clear();
+                            Classq.Login();
+
+                        }
+                        goto start;
+
+
+                    case "2":
+                    case "Registreren":
+
+
+                        {
+                            Console.Clear();
+                            Classq.Registreer();
+                        }
+
+                        goto start;
+
+
+                    case "5":
+                    case "Afsluiten":
+                        {
+
+                            Classq.Afsluiten();
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("?");
+                        Console.ReadKey();
+                        break;
+
+
+                    case "4":
+                    case "premiumlogin":
+                        {
+                            Console.Clear();
+                            Classq.Preminloggen();
+                        }
+
+                        goto start;
+
+
+
+
+                    case "3"://///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        {
+                            Console.Clear();
+                            Classq.Premregistreer();
+                        }
+                        goto start;
+
+
+                    case "8":
+                    case "Afsluitenn":
+                        {
+                            Console.Clear();
+                            Classq.Afsluiten();
+                        }
+
+                    default2:
+
+                        Console.WriteLine("?");
+                        Console.ReadKey();
+                        break;
+                }
+
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("de index klopt niet, probeer het nog een keer");
+                test();
+            }
+
+        }
         public static void Login()
 
         {
@@ -121,7 +253,7 @@ namespace registratie88888888
                         login = true;
                         goto menu1;
 
-                        menu1:
+                    menu1:
 
                         Console.Clear();
                         {
@@ -268,7 +400,7 @@ namespace registratie88888888
 
         username:
 
-            
+
 
 
             input = Console.ReadLine();
@@ -295,7 +427,7 @@ namespace registratie88888888
             }
             username.Add(input);
             Console.WriteLine("Voer uw wachtwoord in: ");
-            password:
+        password:
             input = Console.ReadLine();
             if (input == "")
             {
@@ -442,7 +574,7 @@ namespace registratie88888888
                             login = true;
                             goto menu2;
 
-                            menu2:
+                        menu2:
 
                             Console.Clear();
                             {
@@ -467,9 +599,7 @@ namespace registratie88888888
                                             Console.WriteLine("u bent uitgelogt");
                                             Console.ReadKey();
                                             {
-                                                
                                                 Classq.Welkom();
-                                                Console.Clear();
                                             }
                                         }
                                         break;
@@ -551,7 +681,7 @@ namespace registratie88888888
 
 
                 Console.WriteLine("Uw account instellen");
-                usernamepremium:
+            usernamepremium:
                 input = Console.ReadLine();
                 input = input.ToLower();
                 if (input == "")
@@ -572,7 +702,7 @@ namespace registratie88888888
                 }
                 usernamepremium.Add(input);
                 Console.WriteLine("Uw wachtwoord: ");
-                passwordpremium:
+            passwordpremium:
                 input = Console.ReadLine();
                 if (input == "")
                 {

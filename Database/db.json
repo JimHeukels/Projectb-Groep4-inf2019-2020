@@ -7,7 +7,7 @@
       "Genre": "Avontuur",
       "SpeelDuur": 178,
       "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
-      "Schermtype": null,
+      "Schermtype": "2D",
       "Rating": 0
     },
     {
@@ -17,7 +17,7 @@
       "Genre": "Avontuur",
       "SpeelDuur": 179,
       "Beschrijving": "De hobbits Frodo en Sam trekken verder richting Mordor om hun taak, het vernietigen van de machtige Ene Ring waar de slechte Sauron naar op zoek is, te volbrengen. Hierbij krijgen ze hulp uit onverwachte hoek. Ondertussen proberen Merry en Pippin te ontsnappen uit de handen van een Uruk-Hai leger en helpen Legolas, Aragorn en Gimli koning Theoden van Rohan in zijn strijd tegen de legers van Saruman.",
-      "Schermtype": null,
+      "Schermtype": "2D",
       "Rating": 0
     },
     {
@@ -27,7 +27,7 @@
       "Genre": "Avontuur",
       "SpeelDuur": 201,
       "Beschrijving": "De hobbits Sam en Frodo beginnen samen met Gollum aan het laatste deel van hun reis richting Mordor, om daar te proberen in het hol van de leeuw de machtige Ene Ring te vernietigen. De legers van Gondor proberen ondertussen de stad Minas Tirith te beschermen tegen Sauron's legers.",
-      "Schermtype": null,
+      "Schermtype": "2D",
       "Rating": 0
     },
     {
@@ -37,7 +37,7 @@
       "Genre": "Actie",
       "SpeelDuur": 163,
       "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
-      "Schermtype": null,
+      "Schermtype": "3D",
       "Rating": 0
     },
     {
@@ -47,7 +47,7 @@
       "Genre": "Avontuur",
       "SpeelDuur": 154,
       "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-      "Schermtype": null,
+      "Schermtype": "4D",
       "Rating": 0
     },
     {
@@ -57,7 +57,7 @@
       "Genre": "Horror",
       "SpeelDuur": 116,
       "Beschrijving": "Gerry Lane (Brad Pitt) is een toegewijde vader en echtgenoot die werkt voor het leger en de overheid. Wanneer een zombie-apocalyps uitbreekt, wordt Gerry door de regering gevraagd om de invasie tegen te gaan. Tegelijkertijd moet hij zijn vrouw en kinderen beschermen tegen de verbazingwekkend snelle, vleesetende zombies.",
-      "Schermtype": null,
+      "Schermtype": "3D",
       "Rating": 0
     }
   ],
@@ -71,7 +71,7 @@
           "Genre": "Avontuur",
           "SpeelDuur": 178,
           "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
-          "Schermtype": null,
+          "Schermtype": "2D",
           "Rating": 0
         },
         {
@@ -81,7 +81,7 @@
           "Genre": "Avontuur",
           "SpeelDuur": 179,
           "Beschrijving": "De hobbits Frodo en Sam trekken verder richting Mordor om hun taak, het vernietigen van de machtige Ene Ring waar de slechte Sauron naar op zoek is, te volbrengen. Hierbij krijgen ze hulp uit onverwachte hoek. Ondertussen proberen Merry en Pippin te ontsnappen uit de handen van een Uruk-Hai leger en helpen Legolas, Aragorn en Gimli koning Theoden van Rohan in zijn strijd tegen de legers van Saruman.",
-          "Schermtype": null,
+          "Schermtype": "2D",
           "Rating": 0
         },
         {
@@ -91,7 +91,7 @@
           "Genre": "Avontuur",
           "SpeelDuur": 201,
           "Beschrijving": "De hobbits Sam en Frodo beginnen samen met Gollum aan het laatste deel van hun reis richting Mordor, om daar te proberen in het hol van de leeuw de machtige Ene Ring te vernietigen. De legers van Gondor proberen ondertussen de stad Minas Tirith te beschermen tegen Sauron's legers.",
-          "Schermtype": null,
+          "Schermtype": "2D",
           "Rating": 0
         },
         {
@@ -101,7 +101,7 @@
           "Genre": "Actie",
           "SpeelDuur": 163,
           "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
-          "Schermtype": null,
+          "Schermtype": "3D",
           "Rating": 0
         },
         {
@@ -111,7 +111,7 @@
           "Genre": "Actie",
           "SpeelDuur": 154,
           "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-          "Schermtype": null,
+          "Schermtype": "4D",
           "Rating": 0
         },
         {
@@ -121,7 +121,7 @@
           "Genre": "Horror",
           "SpeelDuur": 116,
           "Beschrijving": "Gerry Lane (Brad Pitt) is een toegewijde vader en echtgenoot die werkt voor het leger en de overheid. Wanneer een zombie-apocalyps uitbreekt, wordt Gerry door de regering gevraagd om de invasie tegen te gaan. Tegelijkertijd moet hij zijn vrouw en kinderen beschermen tegen de verbazingwekkend snelle, vleesetende zombies.",
-          "Schermtype": null,
+          "Schermtype": "3D",
           "Rating": 0
         }
       ],
@@ -137,7 +137,7 @@
                 "Genre": "Avontuur",
                 "SpeelDuur": 178,
                 "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
-                "Schermtype": null,
+                "Schermtype": "2D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -145,71 +145,71 @@
                   "Rij": 0,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
+                  "Naam": "lenna",
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
-                  "Naam": null,
-                  "Beschikbaar": false
+                  "Naam": "lenna",
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -228,7 +228,7 @@
                 "Genre": "Avontuur",
                 "SpeelDuur": 178,
                 "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
-                "Schermtype": null,
+                "Schermtype": "2D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -237,70 +237,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -318,8 +318,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Avontuur",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "De hobbits Sam en Frodo beginnen samen met Gollum aan het laatste deel van hun reis richting Mordor, om daar te proberen in het hol van de leeuw de machtige Ene Ring te vernietigen. De legers van Gondor proberen ondertussen de stad Minas Tirith te beschermen tegen Sauron's legers.",
+                "Schermtype": "2D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -328,70 +328,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -410,7 +410,7 @@
                 "Genre": "Avontuur",
                 "SpeelDuur": 178,
                 "Beschrijving": "Een eeuwenoude ring, die jaren zoek is geweest, wordt gevonden en komt bij toeval terecht bij de kleine Hobbit Frodo. Als de tovenaar Gandalf erachter komt dat deze ring eigenlijk de Ene Ring is waar de slechte Sauron naar op zoek is, gaat Frodo samen met Gandalf, een Dwerg, een Elf, twee Mensen en drie andere Hobbits op een groots avontuur om deze te vernietigen.",
-                "Schermtype": null,
+                "Schermtype": "2D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -419,70 +419,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -501,7 +501,7 @@
                 "Genre": "Actie",
                 "SpeelDuur": 154,
                 "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Schermtype": "4D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -510,70 +510,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -591,8 +591,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Avontuur",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "De hobbits Frodo en Sam trekken verder richting Mordor om hun taak, het vernietigen van de machtige Ene Ring waar de slechte Sauron naar op zoek is, te volbrengen. Hierbij krijgen ze hulp uit onverwachte hoek. Ondertussen proberen Merry en Pippin te ontsnappen uit de handen van een Uruk-Hai leger en helpen Legolas, Aragorn en Gimli koning Theoden van Rohan in zijn strijd tegen de legers van Saruman.",
+                "Schermtype": "2D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -601,70 +601,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -682,8 +682,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Actie",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
+                "Schermtype": "3D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -692,70 +692,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -773,8 +773,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Horror",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "Gerry Lane (Brad Pitt) is een toegewijde vader en echtgenoot die werkt voor het leger en de overheid. Wanneer een zombie-apocalyps uitbreekt, wordt Gerry door de regering gevraagd om de invasie tegen te gaan. Tegelijkertijd moet hij zijn vrouw en kinderen beschermen tegen de verbazingwekkend snelle, vleesetende zombies.",
+                "Schermtype": "3D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -783,70 +783,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -864,8 +864,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Actie",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
+                "Schermtype": "3D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -874,70 +874,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -955,8 +955,8 @@
                 "Datum": "10-6-2020",
                 "Genre": "Actie",
                 "SpeelDuur": 154,
-                "Beschrijving": "Vanaf haar geboorte is Natasha Romanova toevertrouwd aan de KGB, die haar heeft opgeleid tot het ultieme wapen en hun beste agente. Wanneer de Sovjet-Unie uiteenvalt, staat ze ten dode opgeschreven en werd ze gedwongen naar New York te verhuizen. Daar leeft ze inmiddels als freelancer en is het jaren geleden dat de Sovjet-Unie ten val kwam.",
-                "Schermtype": null,
+                "Beschrijving": "In 'No Time to Die' heeft James Bond zijn turbulente leven als geheim agent achter zich gelaten en leidt hij een rustig bestaan op Jamaica. Zijn rust is echter van korte duur wanneer zijn oude vriend Felix Leiter van de CIA opduikt met de vraag naar hulp. Het brengt hem op het spoor van een mysterieuze schurk gewapend met gevaarlijke nieuwe technologie.",
+                "Schermtype": "3D",
                 "Rating": 0
               },
               "Zitplaatsen": [
@@ -965,70 +965,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": true
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-22T15:43:01.5154268+02:00"
@@ -1087,70 +1087,70 @@
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 0,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 0,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 1,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 2,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 3,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 },
                 {
                   "Rij": 1,
                   "Nummer": 4,
                   "ReserveringsNummer": 0,
                   "Naam": null,
-                  "Beschikbaar": false
+                  "Bezet": false
                 }
               ],
               "AanvangsTijd": "2020-04-29T16:11:34.7081962+02:00"
@@ -1174,22 +1174,22 @@
     {
       "Tickets": null,
       "TicketPrijs": 8.25,
-      "TypeTicket": "2D Ticket"
+      "TypeTicket": "2D"
     },
     {
       "Tickets": null,
       "TicketPrijs": 10.5,
-      "TypeTicket": "3D Ticket"
+      "TypeTicket": "3D"
     },
     {
       "Tickets": null,
       "TicketPrijs": 17.75,
-      "TypeTicket": "4D Ticket"
+      "TypeTicket": "4D"
     },
     {
       "Tickets": null,
       "TicketPrijs": 15.0,
-      "TypeTicket": "Dolby Cinema Ticket"
+      "TypeTicket": "Dolby Cinema"
     }
   ]
 }
