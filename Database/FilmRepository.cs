@@ -4,6 +4,8 @@ using System.IO;
 using System.Text;
 using JimFilmsTake2.Model;
 using Newtonsoft.Json;
+using registratie88888888;
+
 namespace JimFilmsTake2.Db
 {
     public class FilmRepository
@@ -57,7 +59,7 @@ namespace JimFilmsTake2.Db
         public void StartMenu()
 
         {
-            Console.WriteLine("\nSelecteer uit de volgende opties:\n");
+            Console.WriteLine("\nSelecteer uit de volgende opties:");
 
             Console.WriteLine("\n(1) beschikbare films aanpassen.\n(2) film toevoegen.\n(3) film verwijderen.\n(4) omzet tonen.\n(5) films tonen");
             Console.Write("Optie : ");
@@ -69,6 +71,7 @@ namespace JimFilmsTake2.Db
         public void Optie(int OptieKiezen)
 
         {
+            Console.Clear();
             Console.WriteLine("\nU heeft gekozen voor optie (" + (OptieKiezen) + ")");
             if (OptieKiezen == 1)
             {
@@ -102,6 +105,13 @@ namespace JimFilmsTake2.Db
 
             {
                 //verwijzing naar functie 6
+                Console.WriteLine("Wilt u terug naar het hoofdmenu? Ja/Nee");
+                string hoofdmenu = Console.ReadLine();
+                if(hoofdmenu == "ja" || hoofdmenu == "Ja")
+                {
+                    var Startmenu = new Classq();
+                    Startmenu.test();
+                }
 
                 Console.WriteLine("\n\nU heeft niet gekozen uit de beschikbare opties.");
                 //Programs.StartMenu(totalfilms); 
@@ -169,16 +179,23 @@ namespace JimFilmsTake2.Db
                 Index++;
             }
             Console.WriteLine("Kies met index voor meer informatie over de film.");
-            int indexfilm = Convert.ToInt32(Console.ReadLine());
-            var filmkies = this._database.Films[indexfilm];
-            if(indexfilm > Index || indexfilm <= 0)
+            int indexfilm = Convert.ToInt32(Console.ReadLine()) -1;
+            var filmaantal = this._database.Films.Count;
+            Console.WriteLine(filmaantal);
+            Console.WriteLine(indexfilm);
+
+            if (indexfilm >= filmaantal || indexfilm < 0)
             {
+
                 Console.WriteLine("de index klopt niet, probeer het nog een keer");
                 VolledigFilmsTonen();
+
             }
-            else
+         
+            else if((indexfilm < filmaantal) && (indexfilm >= 0))
             {
-                Console.WriteLine($"Titel: {filmkies.Titel},\n");
+            
+                Console.WriteLine($"Titel: {this._database.Films[indexfilm].Titel},\n");
                 Console.WriteLine("Terug naar films tonen of naar het menu? F/M");
                 string keuze = Console.ReadLine();
                 if(keuze == "F" || keuze == "f")
@@ -197,7 +214,12 @@ namespace JimFilmsTake2.Db
                     StartMenu();
                 }
             }
+            else
+            {
+                StartMenu();
+            }
         }
+
         public void TicketsTonen() //Tickets tonen
         {
             int Index = 1;
@@ -207,6 +229,7 @@ namespace JimFilmsTake2.Db
                 Index++;
             }
         }
+
         public void TicketAanpassen() //Tickets aanpassen
         {
             Console.WriteLine("\nBeschikbare tickets\n");
@@ -313,35 +336,37 @@ namespace JimFilmsTake2.Db
 
             Console.WriteLine("\nWelkom bij de optie: film aanpassen.");
             FilmsTonen();
-            Console.WriteLine("Welke film wilt u aanpassen? Typ het cijfer van de film");
+            Console.WriteLine("\nWelke film wilt u aanpassen? Typ het cijfer van de film");
             int filmaanpassen = Convert.ToInt32(Console.ReadLine());
-            if (filmaanpassen > this._database.Films.Count || filmaanpassen <= 0)
+            if (filmaanpassen > this._database.Films.Count || filmaanpassen < 0)
             {
-                Console.WriteLine("Probeer het nog een keer");
+                Console.Clear();
+                Console.WriteLine("De index die u heeft ingetypt is niet beschikbaar.\nProbeer het nog een keer.");
                 FilmAanpassen();
             }
-            else
+            else if(filmaanpassen <= this._database.Films.Count && filmaanpassen >= 0)
             {
                 var Filmaanpas = this._database.Films[filmaanpassen - 1];
+                Console.Clear();
                 Console.WriteLine($"Wilt u {Filmaanpas.Titel} aanpassen? Ja/Nee");
                 string antwoord2 = Console.ReadLine();
                 if (antwoord2 == "ja" || antwoord2 == "Ja")
                 {
                     Console.Clear();
                     Console.WriteLine("Titel: " + Filmaanpas.Titel + "\nGenre: " + Filmaanpas.Genre + "\nBeschrijving: " + Filmaanpas.Beschrijving + "\nDatum: " + Filmaanpas.Datum + "\nTijd: " + Filmaanpas.Tijd + "\nSchermtype: " + Filmaanpas.Schermtype + "\nSpeelduur: " + Filmaanpas.SpeelDuur);
-                    Console.WriteLine($"Wat wilt u aanpassen aan {Filmaanpas.Titel}?");
-                    Console.WriteLine($"Wat wilt u aanpassen:\n(1)Titel\n(2)Genre\n(3)Beschrijving\n(4)Datum\n(5)Tijd\n(6)Schermtype\n(7)Speelduur\n(8)Alles aanpassen");
+                    Console.WriteLine($"\nWat wilt u aanpassen:\n(1)Titel\n(2)Genre\n(3)Beschrijving\n(4)Datum\n(5)Tijd\n(6)Schermtype\n(7)Speelduur\n(8)Alles aanpassen");
                     int intantwoord = Convert.ToInt32(Console.ReadLine());
-                    if (intantwoord == 1)
+                    if (intantwoord == 1) //Titel aanpassen
                     {
-                        Console.WriteLine($"U wilt de titel van: {Filmaanpas.Titel} aanpassen.");
+                        Console.Clear();
+                        Console.WriteLine($"(1) U heeft gekozen voor de optie titel aanpassen.");
                         Console.WriteLine($"Typ de nieuwe titel van de film:");
                         string nieuwtitels = Console.ReadLine();
-                        Console.WriteLine($"Wilt u de titel: {Filmaanpas.Titel} in {nieuwtitels} veranderen? Ja/Nee");
+                        Console.WriteLine($"\nWilt u de titel: {Filmaanpas.Titel} in {nieuwtitels} veranderen? Ja/Nee");
                         string antwoord5 = Console.ReadLine();
                         if (antwoord5 == "Ja" || antwoord5 == "ja")
                         {
-                            Console.WriteLine($"De film {Filmaanpas.Titel} is veranderd in {nieuwtitels}.");
+                            Console.WriteLine($"\nDe titel {Filmaanpas.Titel} is veranderd in de nieuwe titel: {nieuwtitels}.");
                             Filmaanpas.Titel = nieuwtitels;
                             UpdateData();
                             FilmsTonen();
@@ -349,25 +374,28 @@ namespace JimFilmsTake2.Db
                         }
                         else
                         {
-                            Console.WriteLine($"Wilt u een andere film aanpassen? Ja/Nee");
+                            Console.WriteLine($"\nWilt u een andere film aanpassen? Ja/Nee");
                             string antwoord3 = Console.ReadLine();
                             if (antwoord3 == "Ja" || antwoord2 == "ja")
                             {
+                                Console.Clear();
+                                Console.WriteLine("Welkom terug bij de optie: film aanpassen");
                                 FilmAanpassen();
                             }
                             else
                             {
-                                Console.WriteLine("We sturen u terug naar het Startmenu.");
+                                Console.Clear();
+                                Console.WriteLine("We sturen u terug naar het menu.");
                                 StartMenu();
                             }
 
                         }
                     }
-                    else if (intantwoord == 2)
+                    else if (intantwoord == 2)//Genre aanpassen
                     {
-                        Console.WriteLine($"(2) U wilt het genre van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(2) U heeft gekozen voor de optie genre aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} heeft het genre: {Filmaanpas.Genre}");
-                        Console.WriteLine("Kies welke genre de film" + Filmaanpas.Titel + " heeft:");
+                        Console.WriteLine("\nKies welke genre de film" + Filmaanpas.Titel + " heeft:");
                         List<string> genre = new List<string>()
                     {
                     "Horror","Comedie","Actie", "Documentaire", "Romantiek", "Animatie", "Drama", "Familiefilm"
@@ -381,39 +409,54 @@ namespace JimFilmsTake2.Db
                         }
                         Console.WriteLine($"Typ de index van het nieuwe genre van de Film");
                         int nieuwgenre1 = Convert.ToInt32(Console.ReadLine());
-                        string genrefilm = genre[nieuwgenre1 - 1];
-                        Console.WriteLine($"Wilt u {Filmaanpas.Titel} met het genre {Filmaanpas.Genre} veranderen in {genrefilm}? Ja/Nee");
-                        string antwoord1 = Console.ReadLine();
-                        if (antwoord1 == "Ja" || antwoord1 == "ja")
+                        if (nieuwgenre1 > genre.Count || nieuwgenre1 < 0)
                         {
-                            Console.WriteLine($"De film {Filmaanpas.Titel} heeft het genre {genrefilm}");
-                            Filmaanpas.Genre = genrefilm;
-                            UpdateData();
-                            FilmsTonen();
-                            StartMenu();
+                            Console.Clear();
+                            Console.WriteLine("De index die u heeft ingetypt is niet beschikbaar.\nProbeer het nog een keer.");
+                            FilmAanpassen();
                         }
-                        else
+                        else if (nieuwgenre1 <= genre.Count && nieuwgenre1 >= 0)
                         {
-                            Console.WriteLine($"Wilt u een andere film aanpassen? Ja/Nee");
-                            string antwoord3 = Console.ReadLine();
-                            if (antwoord3 == "Ja" || antwoord2 == "ja")
+                            Console.WriteLine($"Wilt u {Filmaanpas.Titel} met het genre {Filmaanpas.Genre} veranderen in {genre[nieuwgenre1 - 1]}? Ja/Nee");
+                            string antwoord1 = Console.ReadLine();
+                            if (antwoord1 == "Ja" || antwoord1 == "ja")
                             {
-                                Console.WriteLine("Welkom terug bij de optie: film aanpassen.");
-                                FilmAanpassen();
+                                Console.WriteLine($"De film {Filmaanpas.Titel} heeft het genre {genre[nieuwgenre1 - 1]}");
+                                Filmaanpas.Genre = genre[nieuwgenre1 - 1];
+                                UpdateData();
+                                FilmsTonen();
+                                StartMenu();
                             }
                             else
                             {
-                                Console.WriteLine("We sturen u terug naar het Startmenu.");
-                                Console.Clear();
-                                StartMenu();
-                            }
+                                Console.WriteLine($"Wilt u een andere film of {Filmaanpas.Titel} aanpassen? Ja/Nee");
+                                string antwoord3 = Console.ReadLine();
+                                if (antwoord3 == "Ja" || antwoord3 == "ja")
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Welkom terug bij de optie: film aanpassen.");
+                                    FilmAanpassen();
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("We sturen u terug naar het menu.");
+                                    StartMenu();
+                                }
 
+                            }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("We sturen u terug naar het menu");
+                            StartMenu();
                         }
 
                     }
-                    else if (intantwoord == 3)
+                    else if (intantwoord == 3)//beschrijving aanpassen
                     {
-                        Console.WriteLine($"(3) U wilt de beschrijving van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(3) U heeft gekozen voor de optie beschrijving aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} heeft als beschrijving:\n {Filmaanpas.Beschrijving}");
                         Console.WriteLine($"Typ de nieuwe beschrijving van de film:  {Filmaanpas.Beschrijving}");
                         string nieuwbeschrijving = Console.ReadLine();
@@ -446,9 +489,9 @@ namespace JimFilmsTake2.Db
 
                         }
                     }
-                    else if (intantwoord == 4)
+                    else if (intantwoord == 4)//datum aanpassen
                     {
-                        Console.WriteLine($"(3) U wilt de datum van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(4) U wilt de datum van {Filmaanpas.Titel} aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} draait op {Filmaanpas.Datum}");
                         Console.WriteLine($"Typ de nieuwe datum van de film:  {Filmaanpas.Titel}");
                         string nieuwdatum2 = Console.ReadLine();
@@ -479,9 +522,9 @@ namespace JimFilmsTake2.Db
                         }
                     }
 
-                    else if (intantwoord == 5)
+                    else if (intantwoord == 5)//tijd aanpassen
                     {
-                        Console.WriteLine($"(2) U wilt de tijd van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(5) U heeft gekozen voor de optie tijd aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} draait om {Filmaanpas.Tijd}");
                         Console.WriteLine($"Typ de nieuwe tijd van de Film");
                         string nieuwtijden = Console.ReadLine();
@@ -514,9 +557,9 @@ namespace JimFilmsTake2.Db
 
                         }
                     }
-                    else if (intantwoord == 6)
+                    else if (intantwoord == 6)//schermtype aanpassen
                     {
-                        Console.WriteLine($"(2) U wilt het schermtype van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(6) U heeft gekozen voor de optie schermtype aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} heeft het schermtype: {Filmaanpas.Schermtype}.");
                         Console.WriteLine("Kies welke schermtype" + Filmaanpas.Titel + "heeft: ");
                         int Index2 = 1;
@@ -527,39 +570,55 @@ namespace JimFilmsTake2.Db
                         }
                         Console.WriteLine("Kies de index van het nieuwe schermtype:");
                         int schermtypes = Convert.ToInt32(Console.ReadLine());
-                        var schermkeuze = this._database.Tickets[schermtypes - 1].TypeTicket;
-                        Console.WriteLine($"Wilt u {Filmaanpas.Titel} met het schermtype: {Filmaanpas.Schermtype} veranderen in {schermkeuze}? Ja/Nee");
-                        string scherm = Console.ReadLine();
-                        if (scherm == "Ja" || scherm == "ja")
+                        if (schermtypes > this._database.Tickets.Count || schermtypes < 0)
                         {
-                            Console.WriteLine($"De film {Filmaanpas.Titel} heeft het schermtype: {schermkeuze}");
-                            Filmaanpas.Schermtype = schermkeuze;
-                            UpdateData();
-                            FilmsTonen();
-                            StartMenu();
+                            Console.Clear();
+                            Console.WriteLine("De index die u heeft ingetypt is niet beschikbaar.\nProbeer het nog een keer.");
+                            FilmAanpassen();
+
                         }
-                        else
-                        {
-                            Console.WriteLine($"Wilt u een andere film aanpassen? Ja/Nee");
-                            string antwoord3 = Console.ReadLine();
-                            if (antwoord3 == "Ja" || antwoord2 == "ja")
+                        else if (schermtypes <= this._database.Tickets.Count && schermtypes >= 0) { 
+                            var schermkeuze = this._database.Tickets[schermtypes - 1].TypeTicket;
+                            Console.WriteLine($"Wilt u {Filmaanpas.Titel} met het schermtype: {Filmaanpas.Schermtype} veranderen in {schermkeuze}? Ja/Nee");
+                            string scherm = Console.ReadLine();
+                            if (scherm == "Ja" || scherm == "ja")
                             {
-                                Console.Clear();
-                                Console.WriteLine("Welkom terug bij de optie: film aanpassen.");
-                                FilmAanpassen();
+                                Console.WriteLine($"De film {Filmaanpas.Titel} heeft het schermtype: {schermkeuze}");
+                                Filmaanpas.Schermtype = schermkeuze;
+                                UpdateData();
+                                FilmsTonen();
+                                StartMenu();
                             }
                             else
                             {
-                                Console.Clear();
-                                Console.WriteLine("Welkom terug bij het menu.");
-                                StartMenu();
+                                Console.WriteLine($"Wilt u een andere film aanpassen? Ja/Nee");
+                                string antwoord3 = Console.ReadLine();
+                                if (antwoord3 == "Ja" || antwoord2 == "ja")
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Welkom terug bij de optie: film aanpassen.");
+                                    FilmAanpassen();
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Welkom terug bij het menu.");
+                                    StartMenu();
+                                }
+
                             }
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("De index die u heeft ingetypt is niet beschikbaar.\nProbeer het nog een keer.");
+                            FilmAanpassen();
 
                         }
                     }
                     else if (intantwoord == 7)
                     {
-                        Console.WriteLine($"(7) U wilt de speelduur van {Filmaanpas.Titel} aanpassen.");
+                        Console.WriteLine($"(7) U heeft gekozen voor de optie speelduur aanpassen.");
                         Console.WriteLine($"\nDe film: {Filmaanpas.Titel} heeft een speelduur van: {Filmaanpas.SpeelDuur} minuten.");
                         Console.WriteLine("Typ de nieuwe speelduur van " + Filmaanpas.Titel + "in minuten. Voorbeeld: 172");
                         int speelduur = Convert.ToInt32(Console.ReadLine());
@@ -595,7 +654,7 @@ namespace JimFilmsTake2.Db
                     }
                     else if (intantwoord == 8)
                     {
-                        Console.WriteLine($"(8) U wilt alles aanpassen van de film {Filmaanpas.Titel}.");
+                        Console.WriteLine($"(8) U heeft gekozen voor de optie alles aanpassen.");
                         Console.WriteLine("\nTyp de nieuwe Titel van de film: " + Filmaanpas.Titel);
                         string filmtoevoegen = Console.ReadLine();
                         Console.WriteLine("Kies welke genre de film" + filmtoevoegen + " heeft:");
@@ -671,6 +730,29 @@ namespace JimFilmsTake2.Db
 
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Wilt u een andere film aanpassen? Ja/Nee");
+                    string vraag = Console.ReadLine();
+                    if (vraag == "ja" || vraag == "Ja")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Welkom terug bij de functie: film aanpassen");
+                        FilmAanpassen();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Welkom terug bij het menu");
+                        StartMenu();
+                    }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Probeer het nog een keer");
+                FilmAanpassen();
             }
         }
 
