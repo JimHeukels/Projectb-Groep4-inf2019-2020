@@ -85,7 +85,6 @@ namespace registratie88888888
             if (antwoordOptie == 1)
             {
                 repo.BioscoopKiezen();
-                Console.WriteLine("U kunt een ticket kopen");
             }
             else if (antwoordOptie == 2)
             {
@@ -254,7 +253,7 @@ namespace registratie88888888
                         login = true;
                         goto menu1;
 
-                        menu1:
+                    menu1:
 
                         Console.Clear();
                         {
@@ -401,7 +400,7 @@ namespace registratie88888888
 
         username:
 
-            
+
 
 
             input = Console.ReadLine();
@@ -428,7 +427,7 @@ namespace registratie88888888
             }
             username.Add(input);
             Console.WriteLine("Voer uw wachtwoord in: ");
-            password:
+        password:
             input = Console.ReadLine();
             if (input == "")
             {
@@ -575,7 +574,7 @@ namespace registratie88888888
                             login = true;
                             goto menu2;
 
-                            menu2:
+                        menu2:
 
                             Console.Clear();
                             {
@@ -682,7 +681,7 @@ namespace registratie88888888
 
 
                 Console.WriteLine("Uw account instellen");
-                usernamepremium:
+            usernamepremium:
                 input = Console.ReadLine();
                 input = input.ToLower();
                 if (input == "")
@@ -703,7 +702,7 @@ namespace registratie88888888
                 }
                 usernamepremium.Add(input);
                 Console.WriteLine("Uw wachtwoord: ");
-                passwordpremium:
+            passwordpremium:
                 input = Console.ReadLine();
                 if (input == "")
                 {

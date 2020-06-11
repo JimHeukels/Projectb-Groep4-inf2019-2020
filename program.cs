@@ -13,6 +13,7 @@ namespace JimFilmsTake2
 	{
 		static void Main(string[] args)
 		{
+			Console.Clear();
 			var Startmenu = new Classq();
 			Startmenu.test();
 
