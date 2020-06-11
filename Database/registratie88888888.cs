@@ -81,6 +81,7 @@ namespace registratie88888888
             Console.WriteLine("Welkom bij Nioscoop");
             Console.WriteLine("Kies uw optie:\n(1) U wilt een ticket kopen\n(2) U wilt zich aanmelden/registreren");
             int antwoordOptie = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
             if (antwoordOptie == 1)
             {
                 repo.BioscoopKiezen();
