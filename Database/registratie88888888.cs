@@ -533,6 +533,7 @@ namespace registratie88888888
                 string input;
                 int ID = 0;
                 bool login = false;
+                var repo = new BioscoopRepository();
 
                 var projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
                 var fileUsername = Path.Combine(projectFolder, @"username.json");
@@ -608,7 +609,7 @@ namespace registratie88888888
                                 string userpremium = Convert.ToString(usernamepremium[ID]);
                                 Console.WriteLine("\n Hoofd Menu \n Welkom terug " + userpremium);
 
-                                Console.WriteLine("\n [1] Uitloggen\n [2] Wachtwoord veranderen\n [3] Afsluiten");
+                                Console.WriteLine("\n [1] Uitloggen\n [2] Wachtwoord veranderen\n [3] Premium reservering maken \n [4] Afsluiten");
                                 input = Console.ReadLine();
                                 input.ToLower();
                                 switch (input)
@@ -649,12 +650,21 @@ namespace registratie88888888
                                         goto menu2;
 
                                     case "3":
+                                    case "Premium Reservering": 
+                                        Console.Clear();
+                                        repo.BioscoopKiezenPremium();
+                                        Console.ReadKey();
+                                        break;
+
+
+                                    case "4":
                                     case "Afsluiten":
                                         Console.Clear();
                                         Console.WriteLine("Af aan het sluiten..");
                                         Console.ReadKey();
                                         Environment.Exit(0);
                                         break;
+
 
                                     default:
                                         Console.WriteLine("error probeer het opnieuw");
