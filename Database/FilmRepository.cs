@@ -91,7 +91,9 @@ namespace JimFilmsTake2.Db
             else if (OptieKiezen == 4)
             {
                 // verwijzing naar functie 4 
-                //Programs.TijdenAanpassen(totalfilms); 
+                // OmzetTonen();
+                // Geen Paypal sandbox geïmplementeerd
+                StartMenu();
             }
             else if (OptieKiezen == 5)
             {
@@ -180,6 +182,8 @@ namespace JimFilmsTake2.Db
             else if (AdminOptie == 10)
             {
                 //OmzetTonen();
+                //Geen Paypal sandbox geïmplementeerd
+                AdminMenu();
             }
             else if (AdminOptie == 11)
             {

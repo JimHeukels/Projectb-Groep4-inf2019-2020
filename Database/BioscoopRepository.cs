@@ -671,8 +671,38 @@ namespace JimFilmsTake2.Db
                     RSCount++;
                 }
             }
+            Console.WriteLine("\nHeeft u nog een korting die u kunt toepassen?");
+            Console.Write("Typ 'Ja' of 'Nee' : ");
+            string keuze = Console.ReadLine();
+            if (keuze == "ja" || keuze == "Ja")
+            {
+                Console.WriteLine("\nBeschikbare kortingen");
+                int Index = 1;
+                foreach (Korting i in this._database.Kortingen)
+                {
+                    Console.WriteLine($"({Index}) {i.TypeKorting} : {i.VerrekendeKorting}");
+                    Index++;
+                }
+                Console.Write("Typ de index van de korting die u wilt gebruiken : ");
+                int keuze2 = Convert.ToInt32(Console.ReadLine());
+                var kortingkeuze = this._database.Kortingen[keuze2 - 1];
+                Console.WriteLine($"Wilt u {kortingkeuze.TypeKorting} gebruiken?");
+                Console.Write("Typ 'Ja' of 'Nee' : ");
+                string beslissing = Console.ReadLine();
+                if (beslissing == "ja" || beslissing == "Ja")
+                {
+                    Kosten = ((TicketPrijs * GekozenStoelen.Count) + (LSCount * 2.50)) - ((kortingkeuze.VerrekendeKorting / 100) * (TicketPrijs * GekozenStoelen.Count));
+                }
+                else
+                {
+                    Kosten = TicketPrijs * GekozenStoelen.Count + (LSCount * 2.50);
+                }
 
-            Kosten = TicketPrijs * GekozenStoelen.Count + (LSCount * 2.50);
+            }
+            else
+            {
+                Kosten = TicketPrijs * GekozenStoelen.Count + (LSCount * 2.50);
+            }
             Console.WriteLine($"\nDe totale kosten bedragen {Kosten} euro.");
             Console.WriteLine("\nDruk op 1 om terug te gaan naar het hoofdmenu.\nDruk op enter om het programma te verlaten");
             var Afsluiten = Console.ReadLine();
